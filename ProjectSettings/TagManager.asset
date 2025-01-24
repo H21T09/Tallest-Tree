@@ -8,6 +8,7 @@ TagManager:
   - Ground
   - Decoration
   - WinPoint
+  - Sawblade
   layers:
   - Default
   - TransparentFX

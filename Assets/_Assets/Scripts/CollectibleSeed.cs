@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -9,7 +9,7 @@ public class CollectibleSeed : MonoBehaviour
     public SpriteRenderer Bubble;
 
     public Transform Player;
-    public float magneticForce;
+    public float magneticForce; //lực hút
     public float pickupRange;
     private bool isInRange;
     private void Update()
