@@ -9,6 +9,7 @@ TagManager:
   - Decoration
   - WinPoint
   - Sawblade
+  - Wall
   layers:
   - Default
   - TransparentFX
