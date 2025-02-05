@@ -7,7 +7,7 @@ public class AnimatorControl : MonoBehaviour
     private Animator animator;
     public CharracterJump CharracterJump;
     public WinPoint winPoint;
-   
+    public PlayerDash playerDash;
     private void Awake()
     {
         animator = GetComponent<Animator>();
@@ -16,7 +16,7 @@ public class AnimatorControl : MonoBehaviour
     private void Update()
     {
         AniWin();
-        AniJump();
+        AniJumpAndDash();
         AniIdle();
         
     }
@@ -29,12 +29,17 @@ public class AnimatorControl : MonoBehaviour
         }
     }
 
-    void AniJump()
+    void AniJumpAndDash()
     {
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
-
             animator.Play("Jump", -1, 0f);
+        }
+
+        else if (playerDash.IsDash)
+        {
+            animator.Play("Dash",0, 0f);
+            playerDash.IsDash = false;
         }
     }
 

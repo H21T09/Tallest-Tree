@@ -10,6 +10,7 @@ TagManager:
   - WinPoint
   - Sawblade
   - Wall
+  - Dash
   layers:
   - Default
   - TransparentFX

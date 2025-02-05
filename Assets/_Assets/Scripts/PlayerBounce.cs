@@ -17,7 +17,7 @@ public class PlayerBounce : MonoBehaviour
         if (collision.gameObject.CompareTag("Wall"))
         {
             Vector2 bounceDirection = (transform.position - collision.transform.position).normalized;
-            rb.velocity = Vector2.zero; // Đặt vận tốc về 0 trước khi bật lại
+            rb.velocity = Vector2.zero; 
             rb.AddForce(bounceDirection * bounceForce, ForceMode2D.Impulse);
         }
     }
