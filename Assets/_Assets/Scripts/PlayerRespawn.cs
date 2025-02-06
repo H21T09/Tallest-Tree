@@ -7,6 +7,7 @@ public class PlayerRespawn : MonoBehaviour
     public Vector2 spawnPoint;  // Điểm hồi sinh của người chơi
     public float respawnTime = 1f;  // Thời gian chờ trước khi hồi sinh
     public GameObject BodyPlayer;
+    public GameObject Camera;
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Sawblade"))  
@@ -18,7 +19,6 @@ public class PlayerRespawn : MonoBehaviour
     // Phương thức xử lý khi người chơi chết
     private void Die()
     {
-
         Invoke("Respawn", respawnTime);
     }
 
@@ -28,5 +28,6 @@ public class PlayerRespawn : MonoBehaviour
         // Di chuyển người chơi về điểm hồi sinh
         transform.position = spawnPoint;
         BodyPlayer.SetActive(true);
+        Camera.SetActive(true);
     }
 }

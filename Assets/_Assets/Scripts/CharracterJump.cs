@@ -27,6 +27,8 @@ public class CharracterJump : MonoBehaviour
     {
         isGrounded = false;
         rb.velocity = Vector2.zero;
+        transform.rotation = Quaternion.Euler(0, 0, 0);
+
         float direction = transform.localScale.x;
         Vector2 jumpDirection = new Vector2(forwardForce * direction, jumpForce);
         rb.AddForce(jumpDirection,ForceMode2D.Impulse);
