@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Cinemachine;
 using UnityEngine;
 
 public class PlayerRespawn : MonoBehaviour
@@ -7,7 +8,9 @@ public class PlayerRespawn : MonoBehaviour
     public Vector2 spawnPoint;  // Điểm hồi sinh của người chơi
     public float respawnTime = 1f;  // Thời gian chờ trước khi hồi sinh
     public GameObject BodyPlayer;
-    public GameObject Camera;
+    public CinemachineVirtualCamera Camera;
+
+    public Animator transition;
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Sawblade"))  
@@ -20,6 +23,14 @@ public class PlayerRespawn : MonoBehaviour
     private void Die()
     {
         Invoke("Respawn", respawnTime);
+        StartCoroutine(Loading());
+    }
+
+    IEnumerator Loading()
+    {
+        transition.SetTrigger("End");
+        yield return new WaitForSeconds(1f);
+        
     }
 
     // Phương thức hồi sinh người chơi
@@ -28,6 +39,7 @@ public class PlayerRespawn : MonoBehaviour
         // Di chuyển người chơi về điểm hồi sinh
         transform.position = spawnPoint;
         BodyPlayer.SetActive(true);
-        Camera.SetActive(true);
+        Camera.enabled= true;
+        transition.SetTrigger("Start");
     }
 }

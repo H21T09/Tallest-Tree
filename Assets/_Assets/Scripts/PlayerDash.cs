@@ -5,7 +5,7 @@ public class PlayerDash : MonoBehaviour
     public float dashForce = 10f; 
     private Rigidbody2D rb;
     public  bool IsDash;
-
+  
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -24,4 +24,5 @@ public class PlayerDash : MonoBehaviour
             else transform.rotation = Quaternion.Euler(0, 0, -90);
         }
     }
+
 }
