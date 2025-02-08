@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3064026582662681497}
   - component: {fileID: 4618284203071461766}
   - component: {fileID: 3785040467735336403}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Ground
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -92,7 +92,7 @@ GameObject:
   - component: {fileID: 5136620817786842502}
   - component: {fileID: 7950494810856839864}
   - component: {fileID: 3275864930965704313}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: _0019_logslim
   m_TagString: Wall
   m_Icon: {fileID: 0}

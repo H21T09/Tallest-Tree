@@ -3,12 +3,13 @@
 public class FollowCamera : MonoBehaviour
 {
     public Transform cameraTransform; 
+    
 
-    void FixedUpdate()
+    void Update()
     {
         if (cameraTransform != null)
         {
-            transform.position = new Vector3(cameraTransform.position.x, cameraTransform.position.y + (5.894445f), transform.position.z);
+            transform.position = new Vector3(0, cameraTransform.position.y + 6 , transform.position.z);
         }
     }
 }

@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3914162446427262198}
   - component: {fileID: 1422808521642523759}
   - component: {fileID: 6502687672859953009}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: _0027_rock
   m_TagString: Wall
   m_Icon: {fileID: 0}

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 730671015}
   - component: {fileID: 730671016}
   - component: {fileID: 730671017}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Ground
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -92,7 +92,7 @@ GameObject:
   - component: {fileID: 259185715717780102}
   - component: {fileID: 259185715717780103}
   - component: {fileID: 259185715717780100}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: _0018_logfat
   m_TagString: Untagged
   m_Icon: {fileID: 0}

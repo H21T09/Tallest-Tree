@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using Cinemachine;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -10,7 +11,9 @@ public class PlayerHP : MonoBehaviour
     public GameObject BodyPlayer;
     public CinemachineVirtualCamera Camera;
 
-    
+    public TMP_Text TextDied;
+    public int DiedCount;
+
     public int maxLives = 3; 
     private int currentLives;
 
@@ -31,11 +34,11 @@ public class PlayerHP : MonoBehaviour
             BodyPlayer.SetActive(false);
             Camera.enabled = false;
             FurExplosion.Play();
-
+            DiedCount++;
 
             currentLives--;
             if (currentLives < 0) currentLives = 0;
-            
+
             UpdateLifeUI();
         }
     }
@@ -55,5 +58,7 @@ public class PlayerHP : MonoBehaviour
                 hearts[i].sprite = emptyHeart;
             }
         }
+
+        TextDied.text = DiedCount.ToString();
     }
 }

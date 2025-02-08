@@ -611,6 +611,12 @@ MonoBehaviour:
   FurExplosion: {fileID: 4050641046747870872}
   BodyPlayer: {fileID: 5736819848441199629}
   Camera: {fileID: 0}
+  TextDied: {fileID: 0}
+  DiedCount: 0
+  maxLives: 3
+  hearts: []
+  fullHeart: {fileID: 21300000, guid: d476d5abce439c142a49649bf6602e26, type: 2}
+  emptyHeart: {fileID: 21300000, guid: 7e1d226a65ac84941b1a134434d62113, type: 3}
 --- !u!114 &1548238751
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -636,9 +642,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e00fde8575dabf14197d83058ccc3162, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnPoint: {x: 0, y: -12}
+  spawnPoint: {x: -2, y: -3}
   respawnTime: 1
   BodyPlayer: {fileID: 5736819848441199629}
+  Camera: {fileID: 0}
+  transition: {fileID: 0}
 --- !u!114 &1548238757
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -652,6 +660,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dashForce: 30
+  IsDash: 0
 --- !u!1 &5646484012591626550
 GameObject:
   m_ObjectHideFlags: 0
@@ -722,6 +731,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CharracterJump: {fileID: 1421112348}
   winPoint: {fileID: 0}
+  playerDash: {fileID: 1548238757}
 --- !u!1 &5736819848441199629
 GameObject:
   m_ObjectHideFlags: 0
