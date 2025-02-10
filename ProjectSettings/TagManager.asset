@@ -11,6 +11,7 @@ TagManager:
   - Sawblade
   - Wall
   - Dash
+  - Seed
   layers:
   - Default
   - TransparentFX
