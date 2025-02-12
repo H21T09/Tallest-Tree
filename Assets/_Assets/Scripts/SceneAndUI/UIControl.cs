@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class UIConTrol : MonoBehaviour
+public class UIControl : MonoBehaviour
 {
     public GameObject PanelHowToPlay;
     public void OpenHowToPlay()

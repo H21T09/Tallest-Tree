@@ -7,11 +7,18 @@ public class CollectibleSeed : MonoBehaviour
     public ParticleSystem particleEffect;
     public SpriteRenderer Collectible;
     public SpriteRenderer Bubble;
+    public CircleCollider2D Circlecollider2D;
+    public SeedCounter Seedcounter;
 
     public Transform Player;
     public float magneticForce; //lực hút
     public float pickupRange;
     private bool isInRange;
+
+    private void Awake()
+    {
+        Circlecollider2D = GetComponent<CircleCollider2D>();
+    }
     private void Update()
     {
         Check();  
@@ -46,7 +53,8 @@ public class CollectibleSeed : MonoBehaviour
             particleEffect.Play();
             Collectible.enabled = false;
             Bubble.enabled = false;
-
+            Seedcounter.collectedSeeds++;
+            Circlecollider2D.enabled = false;
             Destroy(gameObject, 0.5f);
         }
         

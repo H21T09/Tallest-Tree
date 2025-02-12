@@ -2,9 +2,12 @@
 
 public class FollowCamera : MonoBehaviour
 {
-    public Transform cameraTransform; 
-    
+    public Transform cameraTransform;
 
+    private void Awake()
+    {
+        cameraTransform = GameObject.Find("Main Camera").GetComponent<Transform>();
+    }
     void Update()
     {
         if (cameraTransform != null)

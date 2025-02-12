@@ -2562,6 +2562,7 @@ MonoBehaviour:
   particleEffect: {fileID: 5387192084714411831}
   Collectible: {fileID: 5400462498403771362}
   Bubble: {fileID: 5401974245237376688}
+  Seedcounter: {fileID: 0}
   Player: {fileID: 0}
   magneticForce: 4
   pickupRange: 1.5
