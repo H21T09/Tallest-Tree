@@ -6,6 +6,7 @@ public class WinPoint : MonoBehaviour
 {
     public bool IsWin = false;
     public Rigidbody2D Player;
+    public GameObject PanelWin;
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -14,6 +15,7 @@ public class WinPoint : MonoBehaviour
             IsWin = true;
             Player.bodyType = RigidbodyType2D.Kinematic;
             Debug.Log("WIN");
+            PanelWin.SetActive(true);
         }
     }
 }

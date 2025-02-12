@@ -9,4 +9,5 @@ public class SceneManagerScript : MonoBehaviour
     {
         SceneManager.LoadScene("MenuGame");
     }
+
 }

@@ -5,12 +5,19 @@ using UnityEngine;
 
 public class PlayerRespawn : MonoBehaviour
 {
-    public Vector2 spawnPoint;  // Điểm hồi sinh của người chơi
+    public Transform StartNest;  // Điểm hồi sinh của người chơi
     public float respawnTime = 1f;  // Thời gian chờ trước khi hồi sinh
     public GameObject BodyPlayer;
     public CinemachineVirtualCamera Camera;
 
+    public int DieCount;
+    public GameObject Effect;
     public Animator transition;
+
+    private void Start()
+    {
+        Invoke("OffEffect", 1f);
+    }
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Sawblade"))  
@@ -28,6 +35,7 @@ public class PlayerRespawn : MonoBehaviour
 
     IEnumerator Loading()
     {
+        Effect.SetActive(true);
         transition.SetTrigger("End");
         yield return new WaitForSeconds(1f);
         
@@ -37,9 +45,19 @@ public class PlayerRespawn : MonoBehaviour
     private void Respawn()
     {
         // Di chuyển người chơi về điểm hồi sinh
-        transform.position = spawnPoint;
+        transition.SetTrigger("Start");
+        Invoke("OffEffect", 1f);
+        DieCount++;
+        if (DieCount == 3) return;
+
+        transform.position = StartNest.position + new Vector3(0, 1f, 0);
         BodyPlayer.SetActive(true);
         Camera.enabled= true;
-        transition.SetTrigger("Start");
+        
+    }
+
+    void OffEffect()
+    {
+        Effect.SetActive(false);
     }
 }

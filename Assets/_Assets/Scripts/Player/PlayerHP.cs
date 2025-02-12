@@ -16,6 +16,7 @@ public class PlayerHP : MonoBehaviour
 
     public int maxLives = 3; 
     private int currentLives;
+    public GameObject PanelLose;
 
     public Image[] hearts; 
     public Sprite fullHeart;
@@ -25,6 +26,11 @@ public class PlayerHP : MonoBehaviour
     {
         currentLives = maxLives;
         UpdateLifeUI();
+    }
+
+    private void Update()
+    {
+        DelayOpenUILose();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -61,4 +67,20 @@ public class PlayerHP : MonoBehaviour
 
         TextDied.text = DiedCount.ToString();
     }
+
+    void DelayOpenUILose()
+    {
+        if (currentLives == 0)
+        {
+            Invoke("OpenUILose", 1f);
+        }
+    }
+
+    void OpenUILose()
+    {
+        PanelLose.SetActive(true);
+        
+    }
+
 }
+

@@ -615,7 +615,10 @@ MonoBehaviour:
   TextDied: {fileID: 0}
   DiedCount: 0
   maxLives: 3
-  hearts: []
+  hearts:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   fullHeart: {fileID: 21300000, guid: d476d5abce439c142a49649bf6602e26, type: 2}
   emptyHeart: {fileID: 21300000, guid: 7e1d226a65ac84941b1a134434d62113, type: 3}
 --- !u!114 &1548238751
@@ -643,7 +646,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e00fde8575dabf14197d83058ccc3162, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnPoint: {x: -2, y: -3}
+  StartNest: {fileID: 0}
   respawnTime: 1
   BodyPlayer: {fileID: 5736819848441199629}
   Camera: {fileID: 0}
