@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -7,11 +7,15 @@ public class CharracterJump : MonoBehaviour
     public float jumpForce;
     public float forwardForce;
     public bool isGrounded;
-    public  Rigidbody2D rb;
+    public Rigidbody2D rb;
+    private float defaultRotationZ = 0f;
+    private CircleCollider2D circleCollider;
 
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+        circleCollider = GetComponent<CircleCollider2D>();
+        rb.constraints = RigidbodyConstraints2D.FreezeRotation;
     }
 
     private void Update()
@@ -21,6 +25,11 @@ public class CharracterJump : MonoBehaviour
             TurnAround();
             Jump();
         }
+        if (!isGrounded)
+        {
+            transform.rotation = Quaternion.Euler(0, 0, defaultRotationZ);
+        }
+
     }
 
     void Jump()
@@ -31,7 +40,7 @@ public class CharracterJump : MonoBehaviour
 
         float direction = transform.localScale.x;
         Vector2 jumpDirection = new Vector2(forwardForce * direction, jumpForce);
-        rb.AddForce(jumpDirection,ForceMode2D.Impulse);
+        rb.AddForce(jumpDirection, ForceMode2D.Impulse);
     }
 
     void TurnAround()
@@ -50,7 +59,33 @@ public class CharracterJump : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Ground"))
         {
-            isGrounded = true;
+            if (IsTouchingGround(collision))
+            {
+                float platformRotationZ = collision.transform.eulerAngles.z;
+                transform.rotation = Quaternion.Euler(0, 0, platformRotationZ);
+                isGrounded = true;
+            }
         }
+    }
+
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Ground"))
+        {
+            transform.rotation = Quaternion.Euler(0, 0, defaultRotationZ);
+        }
+    }
+
+    private bool IsTouchingGround(Collision2D collision)
+    {
+        foreach (ContactPoint2D contact in collision.contacts)
+        {
+            float bottomY = transform.position.y - circleCollider.radius;
+            if (contact.point.y <= bottomY + 0.1f)
+            {
+                return true;
+            }
+        }
+        return false;
     }
 }

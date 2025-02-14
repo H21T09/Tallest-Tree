@@ -14,6 +14,11 @@ public class PlayerRespawn : MonoBehaviour
     public GameObject Effect;
     public Animator transition;
 
+    private void Awake()
+    {
+        Effect = GameObject.Find("Scene Trandition");
+    }
+
     private void Start()
     {
         Invoke("OffEffect", 1f);

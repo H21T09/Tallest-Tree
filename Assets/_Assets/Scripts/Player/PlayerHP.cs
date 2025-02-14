@@ -22,6 +22,27 @@ public class PlayerHP : MonoBehaviour
     public Sprite fullHeart;
     public Sprite emptyHeart;
 
+    private GameObject FindInChildren(Transform parent, string name)
+    {
+        foreach (Transform child in parent)
+        {
+            if (child.name == name)
+                return child.gameObject;
+
+            GameObject found = FindInChildren(child, name);
+            if (found != null)
+                return found;
+        }
+        return null;
+    }
+
+
+    private void Awake()
+    {
+        GameObject parentObject = GameObject.Find("UIGamePlay");
+        PanelLose = FindInChildren(parentObject.transform, "Panel Out Of Attemp");
+
+    }
     void Start()
     {
         currentLives = maxLives;

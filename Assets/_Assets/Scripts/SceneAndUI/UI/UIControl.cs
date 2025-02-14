@@ -10,6 +10,13 @@ public class UIControl : MonoBehaviour
     public GameObject PanelHowToPlay;
     public GameObject PanelOption;
 
+    private void Awake()
+    {
+        GameObject parentObject = GameObject.Find("UIGamePlay");
+        
+        PanelHowToPlay = parentObject.transform.Find("Panel HowToPlay")?.gameObject;
+        PanelOption = parentObject.transform.Find("Panel Options")?.gameObject;
+    }
     public void OpenHowToPlay()
     {
         PanelHowToPlay.SetActive(true);

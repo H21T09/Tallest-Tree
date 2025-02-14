@@ -61,6 +61,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b9c565d26d35d74895fb0e96505d108, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  SceneEffect: {fileID: 0}
+  animator: {fileID: 0}
 --- !u!114 &1347994806
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -86,6 +88,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PanelHowToPlay: {fileID: 0}
+  PanelOption: {fileID: 0}
 --- !u!114 &505076771058463091
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -102,6 +105,8 @@ MonoBehaviour:
   seedWinText: {fileID: 0}
   collectedSeeds: 0
   totalSeeds:
+  - {fileID: 0}
+  - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}

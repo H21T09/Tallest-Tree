@@ -2461,7 +2461,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 24300000, guid: e62eaf6f484ffa84d8df54dc592b2314, type: 2}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: b5097a1a1fd288c4c8b2fda1134cee9d, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -2562,6 +2562,7 @@ MonoBehaviour:
   particleEffect: {fileID: 5387192084714411831}
   Collectible: {fileID: 5400462498403771362}
   Bubble: {fileID: 5401974245237376688}
+  Circlecollider2D: {fileID: 0}
   Seedcounter: {fileID: 0}
   Player: {fileID: 0}
   magneticForce: 4

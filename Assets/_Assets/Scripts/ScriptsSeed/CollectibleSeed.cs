@@ -18,6 +18,8 @@ public class CollectibleSeed : MonoBehaviour
     private void Awake()
     {
         Circlecollider2D = GetComponent<CircleCollider2D>();
+        Seedcounter = FindObjectOfType<SeedCounter>();
+        Player = GameObject.FindGameObjectWithTag("Player").transform;
     }
     private void Update()
     {

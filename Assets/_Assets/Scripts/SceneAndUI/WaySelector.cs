@@ -24,7 +24,7 @@ public class WaySelector : MonoBehaviour
 
     void SelectWay(int wayIndex)
     {
-        selectedWay = wayIndex;
+        selectedWay = wayIndex + 1;
         Debug.Log("Selected Way: " + selectedWay);
     }
 
