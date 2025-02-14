@@ -34,6 +34,7 @@ public class CharracterJump : MonoBehaviour
 
     void Jump()
     {
+        rb.constraints = RigidbodyConstraints2D.FreezeRotation;
         isGrounded = false;
         rb.velocity = Vector2.zero;
         transform.rotation = Quaternion.Euler(0, 0, 0);
@@ -59,12 +60,12 @@ public class CharracterJump : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Ground"))
         {
-            if (IsTouchingGround(collision))
-            {
-                float platformRotationZ = collision.transform.eulerAngles.z;
-                transform.rotation = Quaternion.Euler(0, 0, platformRotationZ);
-                isGrounded = true;
-            }
+
+            rb.constraints = RigidbodyConstraints2D.FreezeAll;
+            float platformRotationZ = collision.transform.eulerAngles.z;
+            transform.rotation = Quaternion.Euler(0, 0, platformRotationZ);
+            isGrounded = true;
+            
         }
     }
 
@@ -76,16 +77,5 @@ public class CharracterJump : MonoBehaviour
         }
     }
 
-    private bool IsTouchingGround(Collision2D collision)
-    {
-        foreach (ContactPoint2D contact in collision.contacts)
-        {
-            float bottomY = transform.position.y - circleCollider.radius;
-            if (contact.point.y <= bottomY + 0.1f)
-            {
-                return true;
-            }
-        }
-        return false;
-    }
+    
 }
