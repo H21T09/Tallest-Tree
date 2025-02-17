@@ -269,7 +269,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 974e33d1e50034549929b487f148a9ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationspeed: 250
+  rotationspeed: 400
 --- !u!114 &4375925683519051870
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -283,5 +283,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lineRenderer: {fileID: 4375925681849219331}
-  movingObject: {fileID: 4375925683519051860}
-  speed: 5
+  speed: 0.5
+  FirstLimit: 0.1
+  lastLimit: 0.9

@@ -12,7 +12,6 @@ public class WinPoint : MonoBehaviour
     private void Awake()
     {
         Effect = GetComponentInChildren<ParticleSystem>();
-        Player = GameObject.Find("Player").GetComponent<Rigidbody2D>();
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {

@@ -100,8 +100,7 @@ public class PlayerHP : MonoBehaviour
     void OpenUILose()
     {
         PanelLose.SetActive(true);
-        
-    }
 
+    }
 }
 

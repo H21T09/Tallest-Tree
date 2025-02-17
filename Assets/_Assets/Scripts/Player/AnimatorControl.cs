@@ -8,9 +8,12 @@ public class AnimatorControl : MonoBehaviour
     public CharracterJump CharracterJump;
     public WinPoint winPoint;
     public PlayerDash playerDash;
+    public PlayerRespawn PlayerRespawn;
+    
     private void Awake()
     {
         animator = GetComponent<Animator>();
+        PlayerRespawn = GetComponentInParent<PlayerRespawn>();
     }
 
     private void Update()
@@ -50,6 +53,11 @@ public class AnimatorControl : MonoBehaviour
             animator.SetBool("Idle", true);
         }
         else animator.SetBool("Idle", false);
+        if (PlayerRespawn.Respawned)
+        {
+            animator.Play("Idle");
+        }
+
     }
 
 
