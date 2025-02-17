@@ -14,4 +14,22 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_Assets/Scenes/WayScene2.unity
     guid: 5969db0fc1f3641468f173d999a6dd37
+  - enabled: 1
+    path: Assets/_Assets/Scenes/WayScene3.unity
+    guid: 97da9e19179c37641a322b5a82447f1c
+  - enabled: 1
+    path: Assets/_Assets/Scenes/WayScene4.unity
+    guid: b8d694271c38f0543964c14cee44ddaf
+  - enabled: 1
+    path: Assets/_Assets/Scenes/WayScene5.unity
+    guid: 34a02a810e2fda84fb71bed408bd7d6b
+  - enabled: 1
+    path: Assets/_Assets/Scenes/WayScene6.unity
+    guid: 9199c842e4e4516419f5f3df917ed6db
+  - enabled: 1
+    path: Assets/_Assets/Scenes/WayScene7.unity
+    guid: 9365327335eeebe4faaf2174c9ab9b42
+  - enabled: 1
+    path: Assets/_Assets/Scenes/WayScene8.unity
+    guid: f3d60b0856b8fb1408050d093d5168a7
   m_configObjects: {}

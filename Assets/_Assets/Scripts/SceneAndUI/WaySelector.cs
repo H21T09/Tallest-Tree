@@ -2,13 +2,15 @@
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using System.Collections.Generic;
+using System.Collections;
 
 public class WaySelector : MonoBehaviour
 {
     public List<Button> NumberWay;  // Danh sách các Button Way
     public Button playButton;       // Button Play
-    private int selectedWay = -1;   // Lưu Way được chọn (-1 nghĩa là chưa chọn)
-
+    private int selectedWay = 1;   // Lưu Way được chọn (-1 nghĩa là chưa chọn)
+    public GameObject Effect;
+    public Animator Trandition;
     void Start()
     {
         // Gán sự kiện cho mỗi Button Way
@@ -30,14 +32,22 @@ public class WaySelector : MonoBehaviour
 
     void PlayGame()
     {
-        if (selectedWay == -1)
-        {
-            Debug.Log("Chưa chọn đường đi!");
-            return;
-        }
+        Effect.SetActive(true);
+        Trandition.SetTrigger("End");
+        StartCoroutine(WaitForAnimationAndLoadGame());
+    }
 
-        // Chuyển scene theo Way đã chọn (đặt tên scene phù hợp)
-        string sceneName = "WayScene" + selectedWay; // Ví dụ: WayScene0, WayScene1...
+    IEnumerator WaitForAnimationAndLoadGame()
+    {
+        
+        yield return new WaitForSeconds(1f); 
+
+        LoadGame();
+    }
+
+    void LoadGame()
+    {
+        string sceneName = "WayScene" + selectedWay;
         SceneManager.LoadScene(sceneName);
     }
 }
