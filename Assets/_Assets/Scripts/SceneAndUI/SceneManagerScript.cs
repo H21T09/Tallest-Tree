@@ -16,12 +16,12 @@ public class SceneManagerScript : MonoBehaviour
     {
         SceneEffect.SetActive(true);
         animator.SetTrigger("End");
-        Invoke("WaitToLoad", 1f);
+        Invoke("WaitToLoad", 0.5f);
     }
 
     void WaitToLoad()
     {
-        SceneManager.LoadScene("MenuGame");
+        SceneManager.LoadScene("MenuGame1");
     }
 
 }

@@ -29,7 +29,7 @@ public class ButtonTeleportManager : MonoBehaviour
     private IEnumerator TeleportPlayerWithDelay(int index)
     {
         PlayerAni.SetTrigger("Tele");
-        yield return new WaitForSeconds(0.2f);  // Wait for 0.5 seconds
+        yield return new WaitForSeconds(0.2f);
 
         if (index >= 0 && index < teleportTargets.Count)
         {
@@ -41,7 +41,7 @@ public class ButtonTeleportManager : MonoBehaviour
             if (targetRectTransform != null)
             {
                 Vector3 worldPos = targetRectTransform.position;
-                player.position = worldPos + new Vector3(0, 0.8f, 0);
+                player.position = worldPos + new Vector3(0, 0.9f, 0);
                 
             }
             else

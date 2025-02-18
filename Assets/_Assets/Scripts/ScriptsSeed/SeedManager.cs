@@ -2,7 +2,7 @@
 
 public class SeedManager : MonoBehaviour
 {
-    private int seed;
+    public int seed =10000;
 
     void Start()
     {
@@ -15,7 +15,7 @@ public class SeedManager : MonoBehaviour
         SaveGold();
     }
 
-    public void SpendGold(int amount)
+    public void SpendSeed(int amount)
     {
         if (seed >= amount)
         {
@@ -35,7 +35,7 @@ public class SeedManager : MonoBehaviour
         seed = PlayerPrefs.GetInt("Seed", 0); // Mặc định là 0 nếu chưa có dữ liệu
     }
 
-    public int GetGold()
+    public int GetSeed()
     {
         return seed;
     }

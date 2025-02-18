@@ -28,7 +28,7 @@ public class PlayerRespawn : MonoBehaviour
 
     private void Start()
     {
-        Invoke("OffEffect", 1f);
+        Invoke("OffEffect", 0.5f);
     }
 
     
@@ -53,7 +53,7 @@ public class PlayerRespawn : MonoBehaviour
     {
         Effect.SetActive(true);
         transition.SetTrigger("End");
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(0.5f);
         
     }
 
@@ -62,7 +62,7 @@ public class PlayerRespawn : MonoBehaviour
     {
         // Di chuyển người chơi về điểm hồi sinh
         transition.SetTrigger("Start");
-        Invoke("OffEffect", 1f);
+        Invoke("OffEffect", 0.5f);
         Respawned = false;
         DieCount++;
         Collider2d.enabled = true;

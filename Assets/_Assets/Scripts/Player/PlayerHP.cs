@@ -93,7 +93,7 @@ public class PlayerHP : MonoBehaviour
     {
         if (currentLives == 0)
         {
-            Invoke("OpenUILose", 1f);
+            Invoke("OpenUILose", 0.5f);
         }
     }
 
