@@ -6,12 +6,12 @@ using UnityEngine;
 
 public class SeedDisplay : MonoBehaviour
 {
-    public TMP_Text SeedText; 
+    public TMP_Text SeedText;
 
-    void Start()
+    
+    private void Update()
     {
-        int seed = PlayerPrefs.GetInt("Seed", 0); 
-        SeedText.text = seed.ToString(); 
-
+        int seed = PlayerPrefs.GetInt("Seed", 0);
+        SeedText.text = seed.ToString();
     }
 }

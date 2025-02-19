@@ -3,7 +3,7 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using System.Collections.Generic;
 using System.Collections;
-
+using TMPro;
 public class WaySelector : MonoBehaviour
 {
     public List<Button> NumberWay;  // Danh sách các Button Way
@@ -13,6 +13,8 @@ public class WaySelector : MonoBehaviour
     public GameObject Effect;
     public Animator Trandition;
     public GameObject PanelChoose;
+
+    public TMP_Text WayNumber;
 
     void Start()
     {
@@ -27,6 +29,10 @@ public class WaySelector : MonoBehaviour
         playButton.onClick.AddListener(PlayGame);
     }
 
+    private void Update()
+    {
+        WayNumber.text = ("STAGE " + selectedWay);
+    }
     void SelectWay(int wayIndex)
     {
         selectedWay = wayIndex + 1;

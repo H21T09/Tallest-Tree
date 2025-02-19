@@ -1,6 +1,7 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class WinPoint : MonoBehaviour
 {
@@ -23,6 +24,19 @@ public class WinPoint : MonoBehaviour
             Player.bodyType = RigidbodyType2D.Kinematic;
             Debug.Log("WIN");
             PanelWin.SetActive(true);
+
+            int currentLevel = SceneManager.GetActiveScene().buildIndex;
+            int unlockedLevel = PlayerPrefs.GetInt("UnlockedLevel", 1);
+
+            PlayerPrefs.SetInt("LevelCompleted_" + currentLevel, 1);
+            if (currentLevel >= unlockedLevel)
+            {
+                PlayerPrefs.SetInt("UnlockedLevel", currentLevel + 1);
+            }
+
+            PlayerPrefs.Save();
+
+
         }
     }
 }

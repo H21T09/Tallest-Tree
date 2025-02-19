@@ -23,4 +23,9 @@ public class UIMenu : MonoBehaviour
         PanelOption.SetActive(false);
         Time.timeScale = 1f;
     }
+
+    public void BackAgain()
+    {
+        PanelOption.SetActive(false);
+    }
 }

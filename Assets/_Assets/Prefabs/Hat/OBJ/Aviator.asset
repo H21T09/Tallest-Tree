@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 2
   hatPrefab: {fileID: 5163345948704689893, guid: a6289beaf8a163748b33e37dd02ae48e, type: 3}
-  price: 0
+  price: 250
   hatOffset: {x: -0.01, y: 0.063, z: 0}

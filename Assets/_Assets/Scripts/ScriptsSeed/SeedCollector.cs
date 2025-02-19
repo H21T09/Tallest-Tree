@@ -12,7 +12,7 @@ public class SeedCollector : MonoBehaviour
     {
         if (other.CompareTag("Seed"))
         {
-            seed += 1;
+            seed += 100;
             PlayerPrefs.SetInt("Seed", seed);
             PlayerPrefs.Save();
         }
