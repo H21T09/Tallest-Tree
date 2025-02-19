@@ -5,13 +5,13 @@ public class HatShopManager : MonoBehaviour
 {
     public List<HatData> allHats;
     public Transform hatParent; // Vị trí đeo mũ trên Player
-    public SeedManager seedManager; // Quản lý seed (gán trong Inspector)
+    public SeedManager seedManager;
 
     private GameObject currentHat;
     public SpriteRenderer HatDefault;
     public SpriteRenderer Strap;
 
-    private HashSet<int> ownedHats = new HashSet<int>(); // Lưu ID các mũ đã mua
+    public HashSet<int> ownedHats = new HashSet<int>(); // Lưu ID các mũ đã mua
     private int selectedHatID = -1; // Lưu ID mũ đang đeo
 
     void Start()
@@ -23,11 +23,10 @@ public class HatShopManager : MonoBehaviour
     {
         if (ownedHats.Contains(hatData.id))
         {
-            EquipHat(hatData); // Nếu đã mua thì chỉ đeo vào
+            EquipHat(hatData);
         }
         else if (seedManager.GetSeed() >= hatData.price)
         {
-            // Nếu đủ seed, thực hiện mua
             seedManager.SpendSeed(hatData.price);
             ownedHats.Add(hatData.id);
             SaveOwnedHats();
@@ -39,26 +38,26 @@ public class HatShopManager : MonoBehaviour
         }
     }
 
-    private void EquipHat(HatData hatData)
+    public void EquipHat(HatData hatData)
     {
         if (currentHat != null)
         {
-            Destroy(currentHat); // Xóa mũ cũ nếu có
+            Destroy(currentHat);
             HatDefault.enabled = false;
             Strap.enabled = false;
         }
 
-
         currentHat = Instantiate(hatData.hatPrefab, hatParent);
-        currentHat.transform.localPosition = hatData.hatOffset; // Giữ đúng vị trí gốc
-        currentHat.transform.localRotation = Quaternion.identity; // Đảm bảo không xoay sai hướng
+        currentHat.transform.localPosition = hatData.hatOffset;
+        currentHat.transform.localRotation = Quaternion.identity;
 
         selectedHatID = hatData.id;
         PlayerPrefs.SetInt("SelectedHatID", selectedHatID);
+        PlayerPrefs.SetString($"HatUIState_{hatData.id}", "Equipped"); // Lưu trạng thái UI
+        PlayerPrefs.Save();
     }
 
-
-    private void LoadOwnedHats()
+    void LoadOwnedHats()
     {
         string savedHats = PlayerPrefs.GetString("OwnedHats", "");
         if (!string.IsNullOrEmpty(savedHats))
@@ -66,13 +65,32 @@ public class HatShopManager : MonoBehaviour
             string[] ids = savedHats.Split(',');
             foreach (var id in ids)
             {
-                ownedHats.Add(int.Parse(id));
+                if (int.TryParse(id, out int hatId))
+                {
+                    ownedHats.Add(hatId);
+                }
             }
         }
 
-        // Load mũ cuối cùng đã chọn
         selectedHatID = PlayerPrefs.GetInt("SelectedHatID", -1);
-        if (selectedHatID != -1)
+
+        // Nếu chưa có mũ nào được chọn, chọn mũ đầu tiên trong danh sách
+        if (selectedHatID == -1 && allHats.Count > 0)
+        {
+            HatData firstHat = allHats[0];
+            if (ownedHats.Contains(firstHat.id)) // Kiểm tra xem mũ đầu tiên đã được mua chưa
+            {
+                EquipHat(firstHat);
+            }
+            else
+            {
+                // Nếu chưa sở hữu mũ đầu tiên, thêm nó vào danh sách và trang bị luôn
+                ownedHats.Add(firstHat.id);
+                SaveOwnedHats();
+                EquipHat(firstHat);
+            }
+        }
+        else if (selectedHatID != -1)
         {
             HatData lastHat = allHats.Find(h => h.id == selectedHatID);
             if (lastHat != null)
@@ -82,19 +100,44 @@ public class HatShopManager : MonoBehaviour
         }
     }
 
-    private void SaveOwnedHats()
+
+    void SaveOwnedHats()
     {
-        PlayerPrefs.SetString("OwnedHats", string.Join(",", ownedHats));
+        string ownedHatsString = string.Join(",", ownedHats);
+        PlayerPrefs.SetString("OwnedHats", ownedHatsString);
+        PlayerPrefs.Save();
     }
-    [ContextMenu ("reset")]
+
+    public bool IsHatOwned(int hatId)
+    {
+        return ownedHats.Contains(hatId);
+    }
+
+    [ContextMenu("reset")]
     public void ResetPurchasedHats()
     {
-        ownedHats.Clear(); // Xóa danh sách mũ đã mua trong bộ nhớ
-        PlayerPrefs.DeleteKey("OwnedHats"); // Xóa dữ liệu lưu trong PlayerPrefs
-        PlayerPrefs.DeleteKey("SelectedHatID"); // Xóa mũ đang đeo
+        ownedHats.Clear();
+        PlayerPrefs.DeleteKey("OwnedHats");
+        PlayerPrefs.DeleteKey("SelectedHatID");
+
+        // Xóa tất cả trạng thái UI của các mũ đã lưu
+        foreach (HatData hat in allHats)
+        {
+            PlayerPrefs.DeleteKey($"HatUIState_{hat.id}");
+        }
+
         PlayerPrefs.Save();
 
-        Debug.Log("Đã reset danh sách mũ!");
+        Debug.Log("Đã reset danh sách mũ và trạng thái UI!");
+
+        // Cập nhật lại UI của tất cả các button mũ
+        HatButton[] hatButtons = FindObjectsOfType<HatButton>();
+        foreach (HatButton button in hatButtons)
+        {
+            button.ResetUI(); // Gọi phương thức reset UI trên từng nút
+        }
+
+
     }
 
 }

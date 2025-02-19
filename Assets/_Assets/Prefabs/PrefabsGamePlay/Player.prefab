@@ -521,6 +521,7 @@ GameObject:
   - component: {fileID: 1548238756}
   - component: {fileID: 1548238757}
   - component: {fileID: 2953116511158708572}
+  - component: {fileID: 934468903}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -651,6 +652,10 @@ MonoBehaviour:
   respawnTime: 1
   BodyPlayer: {fileID: 5736819848441199629}
   Camera: {fileID: 0}
+  Rigidbody2d: {fileID: 0}
+  Collider2d: {fileID: 0}
+  IsCheckPointed: 0
+  Respawned: 0
   DieCount: 0
   Effect: {fileID: 0}
   transition: {fileID: 0}
@@ -680,6 +685,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f250fe63e92741042a07e6502836dcd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &934468903
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5384294041065404425}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3219a1df7d424894ca7526fe497a2ecb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hatParent: {fileID: 1299972697955196487}
+  allHats:
+  - {fileID: 11400000, guid: 6ce7af902905c36458216b57da9f3a15, type: 2}
+  - {fileID: 11400000, guid: 111de38e42b15c64c939300d5b08f5b2, type: 2}
+  - {fileID: 11400000, guid: 2f9cac81b3cbcfd4da2d4ef110c161f3, type: 2}
+  - {fileID: 11400000, guid: 2e9096cf8f6e9ff4c9c6e38d3979c90f, type: 2}
+  - {fileID: 11400000, guid: 17d4bcec03f20074383aed67d0331c98, type: 2}
+  - {fileID: 11400000, guid: 85d32426961b093459a854c724c32b5f, type: 2}
+  - {fileID: 11400000, guid: 3ace559323047ee4f8803a7e0a5aed9e, type: 2}
+  - {fileID: 11400000, guid: 05780fc020f467247af3f27a9f9b70d3, type: 2}
 --- !u!1 &5646484012591626550
 GameObject:
   m_ObjectHideFlags: 0
@@ -751,6 +778,7 @@ MonoBehaviour:
   CharracterJump: {fileID: 1421112348}
   winPoint: {fileID: 0}
   playerDash: {fileID: 1548238757}
+  PlayerRespawn: {fileID: 0}
 --- !u!1 &5736819848441199629
 GameObject:
   m_ObjectHideFlags: 0
@@ -914,7 +942,7 @@ SpriteRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7692849507560290943}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
@@ -998,7 +1026,7 @@ SpriteRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8970101159473245140}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
