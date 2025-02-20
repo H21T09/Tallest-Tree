@@ -27,6 +27,7 @@ public class WinPoint : MonoBehaviour
 
             int currentLevel = SceneManager.GetActiveScene().buildIndex;
             int unlockedLevel = PlayerPrefs.GetInt("UnlockedLevel", 1);
+            Debug.Log(currentLevel);
 
             PlayerPrefs.SetInt("LevelCompleted_" + currentLevel, 1);
             if (currentLevel >= unlockedLevel)

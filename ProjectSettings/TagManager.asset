@@ -12,6 +12,7 @@ TagManager:
   - Wall
   - Dash
   - Seed
+  - Button GotIt
   layers:
   - Default
   - TransparentFX

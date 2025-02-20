@@ -1331,6 +1331,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1df0b31d67ffac1448b0988002d55aac, type: 3}
+--- !u!114 &517069486 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2136916673, guid: c824fec63e662d14180e965ac967fd80, type: 3}
+  m_PrefabInstance: {fileID: 857754276}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &546234638
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2043,6 +2054,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1347994806}
+    - target: {fileID: 1834086461, guid: c824fec63e662d14180e965ac967fd80, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 328802378}
     - target: {fileID: 1141686298858977123, guid: c824fec63e662d14180e965ac967fd80, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -2345,6 +2360,17 @@ Transform:
   m_Father: {fileID: 45904573}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 1}
+--- !u!114 &962154485 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4566945032880185089, guid: c824fec63e662d14180e965ac967fd80, type: 3}
+  m_PrefabInstance: {fileID: 857754276}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &978165011 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 9028518334493990542, guid: 70089f23d4dd0424dba89b944c8c5aa5, type: 3}
@@ -3955,6 +3981,11 @@ Transform:
   m_Father: {fileID: 45904573}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2032729229 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8454674393463709614, guid: c824fec63e662d14180e965ac967fd80, type: 3}
+  m_PrefabInstance: {fileID: 857754276}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2038259925
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4176,11 +4207,6 @@ PolygonCollider2D:
   m_CorrespondingSourceObject: {fileID: 4648329533762626799, guid: f261dcaeab3c34142914cdb8979b21bc, type: 3}
   m_PrefabInstance: {fileID: 2110603309}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &2115024776 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 450065846, guid: c824fec63e662d14180e965ac967fd80, type: 3}
-  m_PrefabInstance: {fileID: 857754276}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2131683381
 GameObject:
   m_ObjectHideFlags: 0
@@ -4339,6 +4365,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1347994806, guid: 56468bce906f23d499e7b040d4e016f8, type: 3}
+      propertyPath: OutOfEnergy
+      value: 
+      objectReference: {fileID: 2032729229}
     - target: {fileID: 1347994807, guid: 56468bce906f23d499e7b040d4e016f8, type: 3}
       propertyPath: PanelOption
       value: 
@@ -4346,7 +4376,7 @@ PrefabInstance:
     - target: {fileID: 1347994807, guid: 56468bce906f23d499e7b040d4e016f8, type: 3}
       propertyPath: PanelHowToPlay
       value: 
-      objectReference: {fileID: 2115024776}
+      objectReference: {fileID: 0}
     - target: {fileID: 1347994811, guid: 56468bce906f23d499e7b040d4e016f8, type: 3}
       propertyPath: PanelWin
       value: 
@@ -4363,10 +4393,6 @@ PrefabInstance:
       propertyPath: seedWinText
       value: 
       objectReference: {fileID: 512096898}
-    - target: {fileID: 505076771058463091, guid: 56468bce906f23d499e7b040d4e016f8, type: 3}
-      propertyPath: totalSeeds.Array.size
-      value: 9
-      objectReference: {fileID: 0}
     - target: {fileID: 505076771058463091, guid: 56468bce906f23d499e7b040d4e016f8, type: 3}
       propertyPath: totalSeeds.Array.data[0]
       value: 
@@ -4455,5 +4481,13 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7321782645083081461, guid: 56468bce906f23d499e7b040d4e016f8, type: 3}
+      propertyPath: timerText
+      value: 
+      objectReference: {fileID: 962154485}
+    - target: {fileID: 7321782645083081461, guid: 56468bce906f23d499e7b040d4e016f8, type: 3}
+      propertyPath: energyText
+      value: 
+      objectReference: {fileID: 517069486}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 56468bce906f23d499e7b040d4e016f8, type: 3}

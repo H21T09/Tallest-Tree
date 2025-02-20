@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class CharracterJump : MonoBehaviour
 {
@@ -21,7 +22,7 @@ public class CharracterJump : MonoBehaviour
     private void Update()
     {
 
-        if (Input.GetKeyDown(KeyCode.Escape) || (Input.GetKeyDown(KeyCode.Mouse0)))
+        if (Input.GetKeyDown(KeyCode.Escape) || (Input.GetKeyDown(KeyCode.Mouse0) && !IsPointerOverUIElement()))
         {
             TurnAround();
             Jump();
@@ -32,6 +33,16 @@ public class CharracterJump : MonoBehaviour
         }
 
     }
+
+    private bool IsPointerOverUIElement()
+    {
+        if (Input.touchCount > 0)
+        {
+            return EventSystem.current.IsPointerOverGameObject(Input.GetTouch(0).fingerId);
+        }
+        return EventSystem.current.IsPointerOverGameObject();
+    }
+
 
     void Jump()
     {

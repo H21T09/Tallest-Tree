@@ -1,10 +1,10 @@
 ﻿using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class LevelManager : MonoBehaviour
 {
-    public Button[] levelButtons; // Gán các button màn chơi trong Inspector
+    public Button[] levelButtons;
+    public ButtonTeleportManager teleportManager; // Thêm tham chiếu tới ButtonTeleportManager
 
     void Start()
     {
@@ -13,36 +13,47 @@ public class LevelManager : MonoBehaviour
 
     void UnlockLevels()
     {
-        int unlockedLevel = PlayerPrefs.GetInt("UnlockedLevel", 1); // Mặc định mở khóa màn 1
+        int unlockedLevel = PlayerPrefs.GetInt("UnlockedLevel", 1);
 
         for (int i = 0; i < levelButtons.Length; i++)
         {
             bool isUnlocked = (i + 1 <= unlockedLevel);
-            levelButtons[i].interactable = isUnlocked; // Mở khóa button
+            bool isCompleted = PlayerPrefs.GetInt("LevelCompleted_" + (i + 1), 0) == 1;
+            levelButtons[i].interactable = isUnlocked;
 
             GameObject Awarded = FindChildByName(levelButtons[i].gameObject, "Awarded");
-            if (Awarded != null)
-            {
-                bool isCompleted = PlayerPrefs.GetInt("LevelCompleted_" + (i + 1), 0) == 0;
-                Awarded.gameObject.SetActive(isCompleted);
-            }
-
-            GameObject Award = FindChildByName(levelButtons[i].gameObject, "Award");
-            if (Award != null)
-            {
-                bool isCompleted = PlayerPrefs.GetInt("LevelCompleted_" + (i + 1), 0) == 1;
-                Award.gameObject.SetActive(isCompleted);
-            }
-
             GameObject Lock = FindChildByName(levelButtons[i].gameObject, "LOCK");
-            if (Lock != null)
-            {
-                bool isCompleted = PlayerPrefs.GetInt("LevelCompleted_" + (i + 1), 0) == 0;
-                Lock.gameObject.SetActive(isCompleted);
-            }
+            GameObject Award = FindChildByName(levelButtons[i].gameObject, "Award");
+
+            if (Awarded != null) Awarded.SetActive(isCompleted);
+            if (Lock != null) Lock.SetActive(!isUnlocked);
+            if (Award != null) Award.SetActive(isUnlocked && !isCompleted);
         }
     }
 
+    public void CompleteLevel(int levelIndex)
+    {
+        // Đánh dấu màn đã hoàn thành
+        PlayerPrefs.SetInt("LevelCompleted_" + levelIndex, 1);
+
+        // Mở khóa màn tiếp theo nếu có
+        int nextLevel = levelIndex + 1;
+        int unlockedLevel = PlayerPrefs.GetInt("UnlockedLevel", 1);
+
+        if (nextLevel > unlockedLevel)
+        {
+            PlayerPrefs.SetInt("UnlockedLevel", nextLevel);
+        }
+
+        PlayerPrefs.Save();
+        UnlockLevels();
+
+        // Nếu có ButtonTeleportManager, gọi hàm teleport đến button tiếp theo
+        if (teleportManager != null)
+        {
+            teleportManager.TeleportToNextButton();
+        }
+    }
 
     GameObject FindChildByName(GameObject parent, string childName)
     {
@@ -52,21 +63,17 @@ public class LevelManager : MonoBehaviour
             if (child.name == childName)
                 return child.gameObject;
         }
-        return null; // Trả về null nếu không tìm thấy
+        return null;
     }
 
-    public void LoadLevel(int levelIndex)
-    {
-        SceneManager.LoadScene(levelIndex);
-    }
-
-
-
-[ContextMenu("reset")]
+    [ContextMenu("reset")]
     void ResetLevel()
     {
         PlayerPrefs.DeleteKey("UnlockedLevel");
+        for (int i = 1; i <= levelButtons.Length; i++)
+        {
+            PlayerPrefs.DeleteKey("LevelCompleted_" + i);
+        }
         PlayerPrefs.Save();
     }
 }
-

@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
-using System.Collections.Generic;
 using System.Collections;
+using System.Collections.Generic;
 
 public class ButtonTeleportManager : MonoBehaviour
 {
@@ -9,6 +9,8 @@ public class ButtonTeleportManager : MonoBehaviour
     public List<Transform> teleportTargets;
     public Animator PlayerAni;
     public Transform player;
+
+    private const string LastTeleportKey = "LastTeleportIndex"; // Key lưu vị trí cuối cùng
 
     void Start()
     {
@@ -18,36 +20,51 @@ public class ButtonTeleportManager : MonoBehaviour
             return;
         }
 
+        // Load vị trí player khi bắt đầu game
+        LoadLastTeleportPosition();
+
         for (int i = 0; i < teleportButtons.Count; i++)
         {
             int index = i;
-            teleportButtons[i].onClick.AddListener(() => StartCoroutine(TeleportPlayerWithDelay(index)));
+            teleportButtons[i].onClick.AddListener(() => StartCoroutine(TeleportPlayerAndScroll(index)));
         }
     }
 
-    // Coroutine to teleport the player with a delay
-    private IEnumerator TeleportPlayerWithDelay(int index)
+    private IEnumerator TeleportPlayerAndScroll(int index)
     {
         PlayerAni.SetTrigger("Tele");
         yield return new WaitForSeconds(0.2f);
 
         if (index >= 0 && index < teleportTargets.Count)
         {
-            // Lấy vị trí của target trong không gian thế giới
-            Vector3 targetPosition = teleportTargets[index].position;
+            player.position = teleportTargets[index].position + new Vector3(0, 0.9f, 0);
 
-            RectTransform targetRectTransform = teleportTargets[index].GetComponent<RectTransform>();
+            // Lưu lại index vị trí cuối cùng
+            PlayerPrefs.SetInt(LastTeleportKey, index);
+            PlayerPrefs.Save();
+        }
+    }
 
-            if (targetRectTransform != null)
+    void LoadLastTeleportPosition()
+    {
+        if (PlayerPrefs.HasKey(LastTeleportKey))
+        {
+            int lastIndex = PlayerPrefs.GetInt(LastTeleportKey);
+            if (lastIndex >= 0 && lastIndex < teleportTargets.Count)
             {
-                Vector3 worldPos = targetRectTransform.position;
-                player.position = worldPos + new Vector3(0, 0.9f, 0);
-                
+                player.position = teleportTargets[lastIndex].position + new Vector3(0, 0.9f, 0);
             }
-            else
-            {
-                player.position = targetPosition;
-            }
+        }
+    }
+
+    public void TeleportToNextButton()
+    {
+        int currentIndex = PlayerPrefs.GetInt(LastTeleportKey, 0);
+        int nextIndex = currentIndex + 1;
+
+        if (nextIndex < teleportTargets.Count)
+        {
+            StartCoroutine(TeleportPlayerAndScroll(nextIndex));
         }
     }
 }

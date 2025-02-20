@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class AnimatorControl : MonoBehaviour
 {
@@ -34,7 +35,7 @@ public class AnimatorControl : MonoBehaviour
 
     void AniJumpAndDash()
     {
-        if (Input.GetKeyDown(KeyCode.Mouse0))
+        if (Input.GetKeyDown(KeyCode.Mouse0)&&!IsPointerOverUIElement())
         {
             animator.Play("Jump", -1, 0f);
         }
@@ -44,6 +45,15 @@ public class AnimatorControl : MonoBehaviour
             animator.Play("Dash",0, 0f);
             playerDash.IsDash = false;
         }
+    }
+
+    private bool IsPointerOverUIElement()
+    {
+        if (Input.touchCount > 0)
+        {
+            return EventSystem.current.IsPointerOverGameObject(Input.GetTouch(0).fingerId);
+        }
+        return EventSystem.current.IsPointerOverGameObject();
     }
 
     void AniIdle()
