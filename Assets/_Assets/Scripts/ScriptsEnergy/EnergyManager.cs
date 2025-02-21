@@ -12,11 +12,12 @@ public class EnergyManager : MonoBehaviour
     public TMP_Text timerText;
     private DateTime lastUsedTime;
     private bool isRegenerating = false;
-    private int regenerationTime = 3600; // 1 giờ (3600 giây) để hồi toàn bộ 5 năng lượng
+    private int regenerationTime = 3600; // 1 giờ để hồi toàn bộ 5 năng lượng
+    private int energyRegenInterval; // Thời gian hồi 1 năng lượng
 
-    
     void Start()
     {
+        energyRegenInterval = regenerationTime / maxEnergy; // Tính thời gian hồi 1 năng lượng
         LoadEnergy();
         StartCoroutine(UpdateTimerCoroutine());
         UpdateUI();
@@ -32,7 +33,7 @@ public class EnergyManager : MonoBehaviour
             PlayerPrefs.Save();
         }
 
-        if (currentEnergy == 0 && !isRegenerating)
+        if (currentEnergy < maxEnergy && !isRegenerating)
         {
             StartCoroutine(StartEnergyRegeneration());
         }
@@ -43,27 +44,30 @@ public class EnergyManager : MonoBehaviour
     private IEnumerator StartEnergyRegeneration()
     {
         isRegenerating = true;
-
-        // Lấy thời gian sử dụng cuối cùng từ PlayerPrefs
         lastUsedTime = DateTime.Parse(PlayerPrefs.GetString("LastUsedTime", DateTime.Now.ToString()));
 
-        while (true)
+        while (currentEnergy < maxEnergy)
         {
             TimeSpan timePassed = DateTime.Now - lastUsedTime;
-            if (timePassed.TotalSeconds >= regenerationTime)
+            int energyToRestore = (int)(timePassed.TotalSeconds / energyRegenInterval);
+
+            if (energyToRestore > 0)
             {
-                currentEnergy = maxEnergy;
+                currentEnergy = Mathf.Min(currentEnergy + energyToRestore, maxEnergy);
+                lastUsedTime = DateTime.Now;
                 PlayerPrefs.SetInt("Energy", currentEnergy);
+                PlayerPrefs.SetString("LastUsedTime", lastUsedTime.ToString());
                 PlayerPrefs.Save();
-                break;
+                UpdateUI();
             }
+
+            if (currentEnergy >= maxEnergy)
+                break;
+
             yield return new WaitForSeconds(10);
         }
-
         isRegenerating = false;
-        UpdateUI();
     }
-
 
     private void LoadEnergy()
     {
@@ -74,14 +78,17 @@ public class EnergyManager : MonoBehaviour
         {
             lastUsedTime = DateTime.Parse(lastUsed);
             TimeSpan timePassed = DateTime.Now - lastUsedTime;
+            int energyToRestore = (int)(timePassed.TotalSeconds / energyRegenInterval);
 
-            if (timePassed.TotalSeconds >= regenerationTime)
+            if (energyToRestore > 0)
             {
-                currentEnergy = maxEnergy;
+                currentEnergy = Mathf.Min(currentEnergy + energyToRestore, maxEnergy);
                 PlayerPrefs.SetInt("Energy", currentEnergy);
+                PlayerPrefs.SetString("LastUsedTime", DateTime.Now.ToString());
                 PlayerPrefs.Save();
             }
-            else if (currentEnergy == 0)
+
+            if (currentEnergy < maxEnergy)
             {
                 StartCoroutine(StartEnergyRegeneration());
             }
@@ -92,23 +99,12 @@ public class EnergyManager : MonoBehaviour
     {
         while (true)
         {
-            if (currentEnergy == 0)
+            if (currentEnergy < maxEnergy)
             {
                 TimeSpan timePassed = DateTime.Now - lastUsedTime;
-                int secondsRemaining = regenerationTime - (int)timePassed.TotalSeconds;
-
-                if (secondsRemaining <= 0)
-                {
-                    currentEnergy = maxEnergy;
-                    PlayerPrefs.SetInt("Energy", currentEnergy);
-                    PlayerPrefs.Save();
-                    UpdateUI();
-                    yield break;
-                }
-
+                int secondsRemaining = energyRegenInterval - (int)(timePassed.TotalSeconds % energyRegenInterval);
                 UpdateTimerUI(secondsRemaining);
             }
-
             yield return new WaitForSeconds(1);
         }
     }
@@ -116,16 +112,15 @@ public class EnergyManager : MonoBehaviour
     private void UpdateUI()
     {
         energyText.text = currentEnergy + "/" + maxEnergy;
-        if (currentEnergy == 0)
-        {
-            timerText.gameObject.SetActive(true);
-            energyText.gameObject.SetActive(false);
-            StartCoroutine(UpdateTimerCoroutine());
-        }
-        else
+        if (currentEnergy > 0)
         {
             timerText.gameObject.SetActive(false);
             energyText.gameObject.SetActive(true);
+        }
+        else
+        {
+            timerText.gameObject.SetActive(true);
+            energyText.gameObject.SetActive(false);
         }
     }
 
@@ -135,7 +130,7 @@ public class EnergyManager : MonoBehaviour
         timerText.text = string.Format("{0:D2}:{1:D2}:{2:D2}", timeSpan.Hours, timeSpan.Minutes, timeSpan.Seconds);
     }
 
-    [ContextMenu("reset")]
+    [ContextMenu("Reset Energy")]
     public void ResetEnergy()
     {
         PlayerPrefs.DeleteKey("Energy");

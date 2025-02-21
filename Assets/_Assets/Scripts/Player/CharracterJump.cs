@@ -12,11 +12,22 @@ public class CharracterJump : MonoBehaviour
     private float defaultRotationZ = 0f;
     private CircleCollider2D circleCollider;
 
+    public AudioClip soundEffect;
+    private AudioSource audioSource;
+
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
         circleCollider = GetComponent<CircleCollider2D>();
         rb.constraints = RigidbodyConstraints2D.FreezeAll;
+
+        audioSource = GetComponent<AudioSource>();
+        if (audioSource == null)
+        {
+            audioSource = gameObject.AddComponent<AudioSource>();
+        }
+        audioSource.playOnAwake = false;
+        audioSource.clip = soundEffect;
     }
 
     private void Update()
@@ -26,6 +37,7 @@ public class CharracterJump : MonoBehaviour
         {
             TurnAround();
             Jump();
+            audioSource.Play();
         }
         if (!isGrounded)
         {

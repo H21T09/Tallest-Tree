@@ -2372,9 +2372,9 @@ GameObject:
   m_Component:
   - component: {fileID: 5193583978771239039}
   - component: {fileID: 5400462498403771362}
-  - component: {fileID: 5271148390400914691}
   - component: {fileID: 5189266610140830182}
   - component: {fileID: 212151298648605014}
+  - component: {fileID: 3652216110748090336}
   m_Layer: 9
   m_Name: CollectibleSeed
   m_TagString: Seed
@@ -2451,7 +2451,44 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!82 &5271148390400914691
+--- !u!114 &5189266610140830182
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5189877139569157181}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91cea1628986784469d47b8254dcf466, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  particleEffect: {fileID: 5387192084714411831}
+  Collectible: {fileID: 5400462498403771362}
+  Bubble: {fileID: 5401974245237376688}
+  Circlecollider2D: {fileID: 0}
+  Seedcounter: {fileID: 0}
+  Player: {fileID: 0}
+  magneticForce: 4
+  pickupRange: 1.5
+  soundEffect: {fileID: 8300000, guid: 72b11202efb2e2f4e9899891ce971119, type: 3}
+--- !u!58 &212151298648605014
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5189877139569157181}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.4
+--- !u!82 &3652216110748090336
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2460,8 +2497,8 @@ AudioSource:
   m_GameObject: {fileID: 5189877139569157181}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 24300000, guid: e62eaf6f484ffa84d8df54dc592b2314, type: 2}
-  m_audioClip: {fileID: 8300000, guid: b5097a1a1fd288c4c8b2fda1134cee9d, type: 3}
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 72b11202efb2e2f4e9899891ce971119, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -2547,42 +2584,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &5189266610140830182
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5189877139569157181}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 91cea1628986784469d47b8254dcf466, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  particleEffect: {fileID: 5387192084714411831}
-  Collectible: {fileID: 5400462498403771362}
-  Bubble: {fileID: 5401974245237376688}
-  Circlecollider2D: {fileID: 0}
-  Seedcounter: {fileID: 0}
-  Player: {fileID: 0}
-  magneticForce: 4
-  pickupRange: 1.5
---- !u!58 &212151298648605014
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5189877139569157181}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.4
 --- !u!1 &5190150048776256125
 GameObject:
   m_ObjectHideFlags: 0

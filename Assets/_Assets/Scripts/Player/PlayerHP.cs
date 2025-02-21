@@ -22,6 +22,9 @@ public class PlayerHP : MonoBehaviour
     public Sprite fullHeart;
     public Sprite emptyHeart;
 
+    public AudioClip soundEffect;
+    public AudioSource audioSource;
+
     private GameObject FindInChildren(Transform parent, string name)
     {
         foreach (Transform child in parent)
@@ -41,6 +44,10 @@ public class PlayerHP : MonoBehaviour
     {
         GameObject parentObject = GameObject.Find("UIGamePlay");
         PanelLose = FindInChildren(parentObject.transform, "Panel Out Of Attemp");
+
+        
+        audioSource.playOnAwake = false;
+        audioSource.clip = soundEffect;
 
     }
     void Start()
@@ -62,7 +69,7 @@ public class PlayerHP : MonoBehaviour
             Camera.enabled = false;
             FurExplosion.Play();
             DiedCount++;
-
+            audioSource.Play();
             currentLives--;
             if (currentLives < 0) currentLives = 0;
 

@@ -18,7 +18,7 @@ public class TimeCountGame : MonoBehaviour
     void TimeCount()
     {
         if (!PanelWin.activeSelf)
-            TimeCountInGame = Time.time;
+            TimeCountInGame = Time.timeSinceLevelLoad;
         else return;
     }
 

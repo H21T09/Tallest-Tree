@@ -1527,6 +1527,10 @@ PrefabInstance:
       propertyPath: totalSeeds.Array.data[16]
       value: 
       objectReference: {fileID: 370015315}
+    - target: {fileID: 1946556366212975837, guid: 56468bce906f23d499e7b040d4e016f8, type: 3}
+      propertyPath: m_Volume
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 7321782644790078132, guid: 56468bce906f23d499e7b040d4e016f8, type: 3}
       propertyPath: m_Name
       value: GameManager
