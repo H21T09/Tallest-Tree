@@ -596,7 +596,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 396ad995bf4563c49aed22448f4087f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jumpForce: 5
+  jumpForce: 5.5
   forwardForce: 3
   isGrounded: 0
   rb: {fileID: 1743795551064315558}

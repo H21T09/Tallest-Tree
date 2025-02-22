@@ -71,6 +71,7 @@ public class CollectibleSeed : MonoBehaviour
             Seedcounter.collectedSeeds++;
             Circlecollider2D.enabled = false;
             audioSource.Play();
+            
             Destroy(gameObject, 0.5f);
         }
         

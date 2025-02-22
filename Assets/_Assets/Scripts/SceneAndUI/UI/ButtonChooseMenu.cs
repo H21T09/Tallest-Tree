@@ -8,21 +8,33 @@ public class ButtonChooseMenu : MonoBehaviour
 
     void Start()
     {
-        // Mặc định chọn button đầu tiên hoặc lấy lại trạng thái từ PlayerPrefs
         InitializeButtons();
     }
 
     void InitializeButtons()
     {
-        // Lấy index của button đã chọn từ PlayerPrefs (nếu có)
-        int selectedIndex = PlayerPrefs.GetInt("SelectedButtonIndex", 0); // Mặc định là button đầu tiên
+        // Nếu game vừa được mở lại từ đầu, reset về button đầu tiên
+        if (PlayerPrefs.GetInt("GameRestarted", 1) == 1)
+        {
+            PlayerPrefs.SetInt("SelectedButtonIndex", 0);
+            PlayerPrefs.SetInt("GameRestarted", 0);
+            PlayerPrefs.Save();
+        }
 
-        // Đặt button theo trạng thái đã lưu
+        int selectedIndex = PlayerPrefs.GetInt("SelectedButtonIndex", 0);
+
+        // Nếu index không hợp lệ, reset về button đầu tiên
+        if (selectedIndex < 0 || selectedIndex >= buttons.Length)
+        {
+            selectedIndex = 0;
+        }
+
+        // Đặt button theo trạng thái đã lưu hoặc mặc định là button đầu tiên
         for (int i = 0; i < buttons.Length; i++)
         {
             if (i == selectedIndex)
             {
-                SelectButton(buttons[i]); // Chọn button đã lưu
+                SelectButton(buttons[i]);
             }
             else
             {
@@ -36,7 +48,7 @@ public class ButtonChooseMenu : MonoBehaviour
         if (selectedButton != null)
         {
             // Đổi màu button trước đó về bình thường
-            selectedButton.image.color = new Color(0.3f, 0.3f, 0.3f); // Màu bạc nhạt
+            selectedButton.image.color = new Color(0.3f, 0.3f, 0.3f);
         }
 
         // Cập nhật button mới được chọn
@@ -47,5 +59,12 @@ public class ButtonChooseMenu : MonoBehaviour
         int selectedIndex = System.Array.IndexOf(buttons, selectedButton);
         PlayerPrefs.SetInt("SelectedButtonIndex", selectedIndex);
         PlayerPrefs.Save(); // Lưu ngay lập tức
+    }
+
+    void OnApplicationQuit()
+    {
+        // Đánh dấu game đã bị đóng hoàn toàn để reset button lần sau
+        PlayerPrefs.SetInt("GameRestarted", 1);
+        PlayerPrefs.Save();
     }
 }

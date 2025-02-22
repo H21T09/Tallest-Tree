@@ -2,14 +2,22 @@
 
 public class SeedManager : MonoBehaviour
 {
-    public int seed =10000;
+    public static SeedManager Instance;
+    public int seed;
 
+    private void Awake()
+    {
+        if (Instance == null)
+            Instance = this;
+        else
+            Destroy(gameObject);
+    }
     void Start()
     {
         LoadGold();
     }
 
-    public void AddGold(int amount)
+    public void AddSeed(int amount)
     {
         seed += amount;
         SaveGold();
@@ -40,5 +48,13 @@ public class SeedManager : MonoBehaviour
         return seed;
     }
 
+    [ContextMenu("Reset")]
 
+    public void Reset()
+    {
+        {
+            PlayerPrefs.DeleteKey("Seed");
+            PlayerPrefs.Save();
+        }
+    }
 }

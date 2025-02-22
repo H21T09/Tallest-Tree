@@ -11,13 +11,23 @@ public class PlayerHatManager : MonoBehaviour
     void Start()
     {
         int selectedHatID = PlayerPrefs.GetInt("SelectedHatID", -1);
+
         if (selectedHatID != -1)
         {
             HatData hatToEquip = allHats.Find(h => h.id == selectedHatID);
             if (hatToEquip != null)
             {
                 EquipHat(hatToEquip);
+                return;
             }
+        }
+
+        // Kiểm tra nếu hatParent không có mũ nào thì chọn mũ đầu tiên trong danh sách
+        if (hatParent.childCount == 0 && allHats.Count > 0)
+        {
+            EquipHat(allHats[0]);
+            PlayerPrefs.SetInt("SelectedHatID", allHats[0].id);
+            PlayerPrefs.Save();
         }
     }
 

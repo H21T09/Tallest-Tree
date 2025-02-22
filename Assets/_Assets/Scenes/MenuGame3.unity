@@ -1481,11 +1481,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8868007454249577920, guid: 295598ac237a575499f302f3902663f2, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 1080
+      value: 1440
       objectReference: {fileID: 0}
     - target: {fileID: 8868007454249577920, guid: 295598ac237a575499f302f3902663f2, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 1920
+      value: 2560
       objectReference: {fileID: 0}
     - target: {fileID: 8868007454249577920, guid: 295598ac237a575499f302f3902663f2, type: 3}
       propertyPath: m_LocalScale.x
@@ -1517,11 +1517,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8868007454249577920, guid: 295598ac237a575499f302f3902663f2, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 539.0437
+      value: 540
       objectReference: {fileID: 0}
     - target: {fileID: 8868007454249577920, guid: 295598ac237a575499f302f3902663f2, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 967.1005
+      value: 960
       objectReference: {fileID: 0}
     - target: {fileID: 8868007455251156890, guid: 295598ac237a575499f302f3902663f2, type: 3}
       propertyPath: m_Name
@@ -2417,7 +2417,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: COOMING SOON
+  m_text: COMING SOON
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 0161d805a3764c089bef00bfe00793f5, type: 2}
   m_sharedMaterial: {fileID: 2147374, guid: 0161d805a3764c089bef00bfe00793f5, type: 2}
@@ -6174,7 +6174,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: COOMING SOON
+  m_text: COMING SOON
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 0161d805a3764c089bef00bfe00793f5, type: 2}
   m_sharedMaterial: {fileID: 2147374, guid: 0161d805a3764c089bef00bfe00793f5, type: 2}
@@ -12319,7 +12319,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: COOMING SOON
+  m_text: COMING SOON
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 0161d805a3764c089bef00bfe00793f5, type: 2}
   m_sharedMaterial: {fileID: 2147374, guid: 0161d805a3764c089bef00bfe00793f5, type: 2}

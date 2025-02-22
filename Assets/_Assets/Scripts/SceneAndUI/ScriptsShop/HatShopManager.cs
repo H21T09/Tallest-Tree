@@ -14,19 +14,39 @@ public class HatShopManager : MonoBehaviour
     public HashSet<int> ownedHats = new HashSet<int>(); // Lưu ID các mũ đã mua
     private int selectedHatID = -1; // Lưu ID mũ đang đeo
 
+    public AudioClip buyEffect;
+    public AudioSource audioSource;
+
+    public AudioClip equipEffect1;
+    public AudioSource audioSource1;
+
+    private void Awake()
+    {
+        audioSource.playOnAwake = false;
+        audioSource.clip = buyEffect;
+
+        audioSource1.playOnAwake = false;
+        audioSource1.clip = equipEffect1;
+    }
+
     void Start()
     {
         LoadOwnedHats(); // Load danh sách mũ đã mua khi vào game
+
+
     }
 
     public void BuyOrEquipHat(HatData hatData)
     {
         if (ownedHats.Contains(hatData.id))
         {
+            audioSource1.Play();
             EquipHat(hatData);
         }
         else if (seedManager.GetSeed() >= hatData.price)
         {
+            audioSource.Play();
+
             seedManager.SpendSeed(hatData.price);
             ownedHats.Add(hatData.id);
             SaveOwnedHats();
@@ -136,8 +156,7 @@ public class HatShopManager : MonoBehaviour
         {
             button.ResetUI(); // Gọi phương thức reset UI trên từng nút
         }
-
-
+       
     }
 
 }

@@ -15,7 +15,30 @@ public class WaySelector : MonoBehaviour
     public Animator Trandition;
     public GameObject PanelChoose;
     public TMP_Text WayNumber;
-   
+
+    public AudioClip soundEffect;
+    public AudioSource audioSource;
+
+    public AudioClip soundEffect1;
+    public AudioSource audioSource1;
+
+    public AudioClip soundEffect2;
+    public AudioSource audioSource2;
+    private void Awake()
+    {
+        
+        audioSource.playOnAwake = false;
+        audioSource.clip = soundEffect;
+
+        audioSource1.playOnAwake = false;
+        audioSource1.clip = soundEffect1;
+
+        audioSource2.playOnAwake = false;
+        audioSource2.clip = soundEffect2;
+
+
+    }
+
 
     void Start()
     {
@@ -44,7 +67,7 @@ public class WaySelector : MonoBehaviour
     void SelectWay(int wayIndex)
     {
         selectedWay = wayIndex + 1;
-
+        audioSource2.Play();
         // Lưu chỉ số button mà người chơi đã chọn
         PlayerPrefs.SetInt("LastSelectedButton", selectedWay);
         PlayerPrefs.Save();
@@ -56,12 +79,13 @@ public class WaySelector : MonoBehaviour
     void OpenChoose()
     {
         PanelChoose.SetActive(true);
+        audioSource.Play();
     }
 
     void PlayGame()
     {
         EnergyManager energyManager = FindObjectOfType<EnergyManager>(); // Tìm script EnergyManager trong scene
-
+        audioSource1.Play();
         if (energyManager != null)
         {
             if (energyManager.currentEnergy > 0)

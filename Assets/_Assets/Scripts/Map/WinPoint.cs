@@ -9,10 +9,19 @@ public class WinPoint : MonoBehaviour
     public Rigidbody2D Player;
     public GameObject PanelWin;
     public ParticleSystem Effect;
+    public AudioClip soundEffect;
+    private AudioSource audioSource;
 
     private void Awake()
     {
         Effect = GetComponentInChildren<ParticleSystem>();
+        audioSource = GetComponent<AudioSource>();
+        if (audioSource == null)
+        {
+            audioSource = gameObject.AddComponent<AudioSource>();
+        }
+        audioSource.playOnAwake = false;
+        audioSource.clip = soundEffect;
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -24,7 +33,7 @@ public class WinPoint : MonoBehaviour
             Player.bodyType = RigidbodyType2D.Kinematic;
             Debug.Log("WIN");
             PanelWin.SetActive(true);
-
+            audioSource.Play();
             int currentLevel = SceneManager.GetActiveScene().buildIndex;
             int unlockedLevel = PlayerPrefs.GetInt("UnlockedLevel", 1);
             Debug.Log(currentLevel);
@@ -34,7 +43,9 @@ public class WinPoint : MonoBehaviour
             {
                 PlayerPrefs.SetInt("UnlockedLevel", currentLevel + 1);
             }
-
+            FindObjectOfType<GameCompletionManager>().CompleteLevel();
+            PlayerPrefs.SetInt("LastSelectedButton", currentLevel + 1);
+            PlayerPrefs.SetInt("LastTeleportIndex", currentLevel);
             PlayerPrefs.Save();
 
 

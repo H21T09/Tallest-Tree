@@ -18,6 +18,11 @@ public class SeedCounter : MonoBehaviour
     {
         UpdateSeedText();
         total = totalSeeds.Count;
+        if(collectedSeeds == total)
+        {
+            FindObjectOfType<GameCompletionManager>().CollectSeed();
+        }
+        
     }
 
     public void CollectSeed()
@@ -30,6 +35,5 @@ public class SeedCounter : MonoBehaviour
     {
         seedText.text = collectedSeeds + " / " + total;
         seedWinText.text = collectedSeeds + " / " + total;
-
     }
 }

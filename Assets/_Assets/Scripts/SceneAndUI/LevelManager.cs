@@ -3,9 +3,14 @@ using UnityEngine.UI;
 
 public class LevelManager : MonoBehaviour
 {
+    public static LevelManager Instance;
     public Button[] levelButtons;
     public ButtonTeleportManager teleportManager; // Thêm tham chiếu tới ButtonTeleportManager
 
+    private void Awake()
+    {
+        Instance = this;
+    }
     void Start()
     {
         UnlockLevels();
@@ -46,7 +51,7 @@ public class LevelManager : MonoBehaviour
         }
 
         PlayerPrefs.Save();
-        UnlockLevels();
+        
 
         // Nếu có ButtonTeleportManager, gọi hàm teleport đến button tiếp theo
         if (teleportManager != null)

@@ -65,14 +65,15 @@ public class DailyLogin : MonoBehaviour
         Debug.Log("Day1" + Day_1);
         Debug.Log("Day2" + Day_2);
         Debug.Log(System.DateTime.Now.Day);
+        
+
         if (LastDate != System.DateTime.Now.Day)
         {
-            
-            if (Day_1 == 0)  
+            if (Day_1 == 0)
             {
-                Day_1 = 1;     
+                Day_1 = 1;
             }
-            else if (Day_2 == 0)  
+            else if (Day_2 == 0 )  
             {
                 Day_2 = 1;     
             }
@@ -98,14 +99,8 @@ public class DailyLogin : MonoBehaviour
             }
 
 
-            // Cập nhật lại "LastDate" sau khi xử lý
-            LastDate = System.DateTime.Now.Day;
-            PlayerPrefs.SetInt("LastDate", LastDate);
-            PlayerPrefs.Save();  // Lưu lại thay đổi
-
-            Reward();  // Gọi hàm thưởng
         }
-
+        Reward();
         Debug.Log("Day1" + Day_1);
 
     }
@@ -249,7 +244,7 @@ public class DailyLogin : MonoBehaviour
             PlayerPrefs.SetInt("Day_1", 2);
             PlayerPrefs.Save();
             Reward();
-
+            EnergyManager.Instance.UpdateUI();
         }
         
     }
@@ -269,7 +264,7 @@ public class DailyLogin : MonoBehaviour
             PlayerPrefs.Save();
             Reward();
 
-
+            EnergyManager.Instance.UpdateUI();
         }
     }
 
@@ -288,7 +283,7 @@ public class DailyLogin : MonoBehaviour
             PlayerPrefs.Save();
             Reward();
 
-
+            EnergyManager.Instance.UpdateUI();
         }
     }
 
@@ -307,7 +302,7 @@ public class DailyLogin : MonoBehaviour
             PlayerPrefs.Save();
             Reward();
 
-
+            EnergyManager.Instance.UpdateUI();
         }
     }
 
@@ -326,7 +321,7 @@ public class DailyLogin : MonoBehaviour
             PlayerPrefs.Save();
             Reward();
 
-
+            EnergyManager.Instance.UpdateUI();
         }
     }
 
@@ -345,7 +340,7 @@ public class DailyLogin : MonoBehaviour
             PlayerPrefs.Save();
             Reward();
 
-
+            EnergyManager.Instance.UpdateUI();
         }
     }
 
@@ -363,7 +358,7 @@ public class DailyLogin : MonoBehaviour
             PlayerPrefs.SetInt("Day_7", 2);
             PlayerPrefs.Save();
             Reward();
-
+            EnergyManager.Instance.UpdateUI();
 
         }
     }

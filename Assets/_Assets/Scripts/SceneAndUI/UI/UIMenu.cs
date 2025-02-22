@@ -5,8 +5,9 @@ using UnityEngine;
 
 public class UIMenu : MonoBehaviour
 {
+    public AudioClip soundEffect;
+    private AudioSource audioSource;
 
-    
     public GameObject PanelOption;
     public GameObject TreeOption;
     public GameObject Daily;
@@ -15,6 +16,13 @@ public class UIMenu : MonoBehaviour
     {
         GameObject parentObject = GameObject.Find("UI");
         PanelOption = parentObject.transform.Find("Panel Options")?.gameObject;
+        audioSource = GetComponent<AudioSource>();
+        if (audioSource == null)
+        {
+            audioSource = gameObject.AddComponent<AudioSource>();
+        }
+        audioSource.playOnAwake = false;
+        audioSource.clip = soundEffect;
     }
 
    
@@ -55,6 +63,7 @@ public class UIMenu : MonoBehaviour
     public void OpenTree()
     {
         TreeOption.SetActive(true) ;
+        audioSource.Play();
     }
 
     public void CloseTree()
