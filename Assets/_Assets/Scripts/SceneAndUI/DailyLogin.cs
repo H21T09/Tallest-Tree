@@ -238,6 +238,7 @@ public class DailyLogin : MonoBehaviour
             PlayerPrefs.SetInt("LastDate", LastDate);
             seed += 100;
             PlayerPrefs.SetInt("Seed", seed);
+            PlayerPrefs.SetInt("TotalSeed", seed);
             Energy += 5;
             PlayerPrefs.SetInt("Energy", Energy);
             Day_1 = 2;
@@ -257,6 +258,7 @@ public class DailyLogin : MonoBehaviour
             PlayerPrefs.SetInt("LastDate", LastDate);
             seed += 150;
             PlayerPrefs.SetInt("Seed", seed);
+            PlayerPrefs.SetInt("TotalSeed", seed);
             Energy += 5;
             PlayerPrefs.SetInt("Energy", Energy);
             Day_2 = 2;
@@ -276,6 +278,7 @@ public class DailyLogin : MonoBehaviour
             PlayerPrefs.SetInt("LastDate", LastDate);
             seed += 200;
             PlayerPrefs.SetInt("Seed", seed);
+            PlayerPrefs.SetInt("TotalSeed", seed);
             Energy += 5;
             PlayerPrefs.SetInt("Energy", Energy);
             Day_3 = 2;
@@ -295,6 +298,7 @@ public class DailyLogin : MonoBehaviour
             PlayerPrefs.SetInt("LastDate", LastDate);
             seed += 250;
             PlayerPrefs.SetInt("Seed", seed);
+            PlayerPrefs.SetInt("TotalSeed", seed);
             Energy += 5;
             PlayerPrefs.SetInt("Energy", Energy);
             Day_4 = 2;
@@ -314,6 +318,7 @@ public class DailyLogin : MonoBehaviour
             PlayerPrefs.SetInt("LastDate", LastDate);
             seed += 300;
             PlayerPrefs.SetInt("Seed", seed);
+            PlayerPrefs.SetInt("TotalSeed", seed);
             Energy += 5;
             PlayerPrefs.SetInt("Energy", Energy);
             Day_5 = 2;
@@ -333,6 +338,7 @@ public class DailyLogin : MonoBehaviour
             PlayerPrefs.SetInt("LastDate", LastDate);
             seed += 500;
             PlayerPrefs.SetInt("Seed", seed);
+            PlayerPrefs.SetInt("TotalSeed", seed);
             Energy += 5;
             PlayerPrefs.SetInt("Energy", Energy);
             Day_6 = 2;
@@ -352,6 +358,7 @@ public class DailyLogin : MonoBehaviour
             PlayerPrefs.SetInt("LastDate", LastDate);
             seed += 1000;
             PlayerPrefs.SetInt("Seed", seed);
+            PlayerPrefs.SetInt("TotalSeed", seed);
             Energy += 5;
             PlayerPrefs.SetInt("Energy", Energy);
             Day_7 = 2;

@@ -4,6 +4,7 @@ public class SeedManager : MonoBehaviour
 {
     public static SeedManager Instance;
     public int seed;
+    public int totalseed;
 
     private void Awake()
     {
@@ -19,8 +20,11 @@ public class SeedManager : MonoBehaviour
 
     public void AddSeed(int amount)
     {
+        totalseed += amount;
         seed += amount;
         SaveGold();
+
+       
     }
 
     public void SpendSeed(int amount)
@@ -34,6 +38,7 @@ public class SeedManager : MonoBehaviour
 
     void SaveGold()
     {
+        PlayerPrefs.SetInt("TotalSeed",totalseed);
         PlayerPrefs.SetInt("Seed", seed);
         PlayerPrefs.Save();
     }
@@ -41,6 +46,7 @@ public class SeedManager : MonoBehaviour
     void LoadGold()
     {
         seed = PlayerPrefs.GetInt("Seed", 0); // Mặc định là 0 nếu chưa có dữ liệu
+        totalseed = PlayerPrefs.GetInt("TotalSeed", 0); // Mặc định là 0 nếu chưa có dữ liệu
     }
 
     public int GetSeed()

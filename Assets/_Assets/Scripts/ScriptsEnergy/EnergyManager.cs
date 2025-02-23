@@ -105,8 +105,8 @@ public class EnergyManager : MonoBehaviour
 
             if (energyToRestore > 0)
             {
-                currentEnergy = Mathf.Min(currentEnergy + energyToRestore, maxEnergy);
-                PlayerPrefs.SetInt("Energy", currentEnergy);
+                //currentEnergy = Mathf.Min(currentEnergy + energyToRestore, maxEnergy);
+                //PlayerPrefs.SetInt("Energy", currentEnergy);
                 PlayerPrefs.SetString("LastUsedTime", DateTime.Now.ToString());
                 PlayerPrefs.Save();
             }

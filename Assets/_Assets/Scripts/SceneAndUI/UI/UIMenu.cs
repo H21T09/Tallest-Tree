@@ -6,21 +6,18 @@ using UnityEngine;
 public class UIMenu : MonoBehaviour
 {
     public AudioClip soundEffect;
-    private AudioSource audioSource;
+    public AudioSource audioSource;
 
     public GameObject PanelOption;
     public GameObject TreeOption;
     public GameObject Daily;
+    public GameObject Achievements;
 
     private void Awake()
     {
         GameObject parentObject = GameObject.Find("UI");
         PanelOption = parentObject.transform.Find("Panel Options")?.gameObject;
-        audioSource = GetComponent<AudioSource>();
-        if (audioSource == null)
-        {
-            audioSource = gameObject.AddComponent<AudioSource>();
-        }
+        
         audioSource.playOnAwake = false;
         audioSource.clip = soundEffect;
     }
@@ -70,4 +67,14 @@ public class UIMenu : MonoBehaviour
     {
         TreeOption.SetActive(false) ;
     }
+
+    public void OpenAchievements()
+    {
+        Achievements.SetActive(true);
     }
+
+    public void CloseAchievements()
+    { 
+       Achievements.SetActive(false);
+    }
+}

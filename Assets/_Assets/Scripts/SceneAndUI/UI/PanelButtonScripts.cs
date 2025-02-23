@@ -11,16 +11,12 @@ public class PanelButtonScripts : MonoBehaviour
     public GameObject Effect;
     public Animator Trandition;
     public AudioClip soundEffect;
-    private AudioSource audioSource;
+    public AudioSource audioSource1;
     private void Awake()
     {
-        audioSource = GetComponent<AudioSource>();
-        if (audioSource == null)
-        {
-            audioSource = gameObject.AddComponent<AudioSource>();
-        }
-        audioSource.playOnAwake = false;
-        audioSource.clip = soundEffect;
+        
+        audioSource1.playOnAwake = false;
+        audioSource1.clip = soundEffect;
     }
 
     void Start()
@@ -36,7 +32,7 @@ public class PanelButtonScripts : MonoBehaviour
     void Select(int wayIndex)
     {
         selected = wayIndex + 1;
-        audioSource.Play();
+        audioSource1.Play();
         NextMenu();
     }
 

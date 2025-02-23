@@ -13,6 +13,9 @@ TagManager:
   - Dash
   - Seed
   - Button GotIt
+  - SoundOnIcon
+  - SoundOffIcon
+  - Toseed
   layers:
   - Default
   - TransparentFX

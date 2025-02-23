@@ -3,18 +3,22 @@
 public class SeedCollector : MonoBehaviour
 {
     private int seed;
+    public AudioClip soundEffect;
 
+    public AudioSource audioSource;
     void Start()
     {
         seed = PlayerPrefs.GetInt("Seed", 0);
+        
+        audioSource.playOnAwake = false;
+        audioSource.clip = soundEffect;
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Seed"))
         {
-            seed += 1;
-            PlayerPrefs.SetInt("Seed", seed);
-            PlayerPrefs.Save();
+            SeedManager.Instance.AddSeed(1);
+            audioSource.Play();
         }
     }
    

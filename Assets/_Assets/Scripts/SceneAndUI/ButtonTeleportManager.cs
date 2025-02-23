@@ -27,8 +27,9 @@ public class ButtonTeleportManager : MonoBehaviour
         if (PlayerPrefs.GetInt(FromGameSceneKey, 0) == 1)
         {
             int index = PlayerPrefs.GetInt(LastTeleportKey);
+            if (index == 0) index++;
             player.position = teleportTargets[index -1].position + new Vector3(0, 0.9f, 0);
-            StartCoroutine(DelayedLoadLastTeleportPosition(5f)); // Delay 5 giây
+            StartCoroutine(DelayedLoadLastTeleportPosition(1f)); // Delay 5 giây
             PlayerPrefs.SetInt(FromGameSceneKey, 0); // Reset lại trạng thái
             PlayerPrefs.Save();
         }

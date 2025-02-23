@@ -3,6 +3,7 @@ using System.Collections.Generic;
 
 public class HatShopManager : MonoBehaviour
 {
+    public static HatShopManager Instance;
     public List<HatData> allHats;
     public Transform hatParent; // Vị trí đeo mũ trên Player
     public SeedManager seedManager;
@@ -22,6 +23,7 @@ public class HatShopManager : MonoBehaviour
 
     private void Awake()
     {
+
         audioSource.playOnAwake = false;
         audioSource.clip = buyEffect;
 
@@ -35,6 +37,8 @@ public class HatShopManager : MonoBehaviour
 
 
     }
+
+    
 
     public void BuyOrEquipHat(HatData hatData)
     {
@@ -125,6 +129,7 @@ public class HatShopManager : MonoBehaviour
     {
         string ownedHatsString = string.Join(",", ownedHats);
         PlayerPrefs.SetString("OwnedHats", ownedHatsString);
+        PlayerPrefs.SetInt("OwnedHatCount", ownedHats.Count); // Lưu số lượng mũ đã mua
         PlayerPrefs.Save();
     }
 

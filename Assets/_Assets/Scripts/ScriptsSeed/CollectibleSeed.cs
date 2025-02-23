@@ -15,22 +15,13 @@ public class CollectibleSeed : MonoBehaviour
     public float pickupRange;
     private bool isInRange;
 
-    public AudioClip soundEffect;
-
-    private AudioSource audioSource;
     private void Awake()
     {
         Circlecollider2D = GetComponent<CircleCollider2D>();
         Seedcounter = FindObjectOfType<SeedCounter>();
         Player = GameObject.FindGameObjectWithTag("Player").transform;
 
-        audioSource = GetComponent<AudioSource>();
-        if (audioSource == null)
-        {
-            audioSource = gameObject.AddComponent<AudioSource>();
-        }
-        audioSource.playOnAwake = false;
-        audioSource.clip = soundEffect;
+        
 
 
     }
@@ -70,7 +61,7 @@ public class CollectibleSeed : MonoBehaviour
             Bubble.enabled = false;
             Seedcounter.collectedSeeds++;
             Circlecollider2D.enabled = false;
-            audioSource.Play();
+            
             
             Destroy(gameObject, 0.5f);
         }

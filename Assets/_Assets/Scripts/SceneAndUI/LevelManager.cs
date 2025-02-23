@@ -71,6 +71,21 @@ public class LevelManager : MonoBehaviour
         return null;
     }
 
+    public int GetCompletedLevels()
+    {
+        int completedCount = 0;
+
+        for (int i = 0; i < levelButtons.Length; i++)
+        {
+            if (PlayerPrefs.GetInt("LevelCompleted_" + (i + 1), 0) == 1)
+            {
+                completedCount++;
+            }
+        }
+
+        return completedCount;
+    }
+
     [ContextMenu("reset")]
     void ResetLevel()
     {
