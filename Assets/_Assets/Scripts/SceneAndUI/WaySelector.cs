@@ -16,6 +16,8 @@ public class WaySelector : MonoBehaviour
     public GameObject PanelChoose;
     public TMP_Text WayNumber;
 
+    public GameObject NotEnoughEnergy;
+
     public AudioClip soundEffect;
     public AudioSource audioSource;
 
@@ -94,7 +96,7 @@ public class WaySelector : MonoBehaviour
             }
             else
             {
-                Debug.Log("Không đủ năng lượng để chơi!");
+                NotEnoughEnergy.SetActive(true);
                 return;
             }
         }
