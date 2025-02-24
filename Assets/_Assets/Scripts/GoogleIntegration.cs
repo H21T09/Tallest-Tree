@@ -17,12 +17,13 @@ public class GoogleIntegration : MonoBehaviour
 
         PlayGamesPlatform.Instance.Authenticate((success) =>
         {
-            if(success == GooglePlayGames.BasicApi.SignInStatus.Success)
+            if(success == SignInStatus.Success)
             {
                 Debug.Log("login with gg was success");
                 PlayGamesPlatform.Instance.RequestServerSideAccess(true, code =>
                 {
                     Debug.Log("Auth code is" + code);
+                    GooglePlayToken = code;
                 });
             }
             else
@@ -31,7 +32,7 @@ public class GoogleIntegration : MonoBehaviour
                 Debug.LogError("Login Unsuccessful");
             }
         });
-        AuthenticateWithUnity();
+        await AuthenticateWithUnity();
     }
 
     private async Task AuthenticateWithUnity()
