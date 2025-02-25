@@ -1,14 +1,76 @@
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using UnityEngine;
 using GooglePlayGames;
 using Unity.Services.Core;
 using GooglePlayGames.BasicApi;
 using Unity.Services.Authentication;
+using System.Reflection;
 
 public class GoogleIntegration : MonoBehaviour
 {
+    public static GoogleIntegration Instance;
     public string GooglePlayToken;
     public string GooglePlayError;
+    
+    public bool connectedToGooglePlay;
+
+
+    
+        private void Awake()
+        {
+            if (Instance == null)
+                Instance = this;
+            else
+                Destroy(gameObject);
+
+            PlayGamesPlatform.DebugLogEnabled = true;
+            PlayGamesPlatform.Activate();
+        }
+    
+
+    private void Start()
+    {
+        LogInToGooglePlay();
+    }
+
+   void LogInToGooglePlay()
+    {
+        PlayGamesPlatform.Instance.Authenticate(ProcessAuthentication);
+    }
+
+    private void ProcessAuthentication(SignInStatus status)
+    {
+        if(status == SignInStatus.Success)
+        {
+            connectedToGooglePlay = true;
+        }
+        else connectedToGooglePlay =false;
+    }
+
+    public void UpdateLeaderboard()
+    {
+        if (connectedToGooglePlay)
+        {
+
+            string leaderboardID = "CgkIxs6L2YscEAIQAg";
+            // Đẩy điểm lên Leaderboard
+            Social.ReportScore(SeedManager.Instance.totalseed, leaderboardID, (bool success) =>
+            {
+                if (success)
+                    Debug.Log("Total Seed updated to Leaderboard successfully!");
+                else
+                    Debug.LogError("Failed to update Total Seed to Leaderboard.");
+            });
+        }
+    }
+
+    public void ShowLeaderBoard()
+    {
+        if (!connectedToGooglePlay) LogInToGooglePlay();
+        Social.ShowLeaderboardUI();
+    }
+
+
 
     public async Task Authenticate()
     {

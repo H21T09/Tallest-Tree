@@ -1,11 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
-using static UnityEngine.EventSystems.EventTrigger;
 
 public class DailyLogin : MonoBehaviour
 {
+
+    public HatData eventHat;
+    
     public int LastDate;
     private int seed;
     private int Energy;
@@ -234,6 +235,7 @@ public class DailyLogin : MonoBehaviour
     {
         if(Day_1 == 1)
         {
+            
             LastDate = System.DateTime.Now.Day;
             PlayerPrefs.SetInt("LastDate", LastDate);
             seed += 100;
@@ -254,6 +256,7 @@ public class DailyLogin : MonoBehaviour
     {
         if(Day_2 == 1)
         {
+            
             LastDate = System.DateTime.Now.Day;
             PlayerPrefs.SetInt("LastDate", LastDate);
             seed += 150;
@@ -354,6 +357,7 @@ public class DailyLogin : MonoBehaviour
     {
         if (Day_7 == 1)
         {
+            ReceiveEventHat(eventHat);
             LastDate = System.DateTime.Now.Day;
             PlayerPrefs.SetInt("LastDate", LastDate);
             seed += 1000;
@@ -367,6 +371,19 @@ public class DailyLogin : MonoBehaviour
             Reward();
             EnergyManager.Instance.UpdateUI();
 
+        }
+    }
+
+    void ReceiveEventHat(HatData hatData)
+    {
+        string savedEventHats = PlayerPrefs.GetString("EventHatsReceived", "");
+        List<string> eventHatList = new List<string>(savedEventHats.Split(','));
+
+        if (!eventHatList.Contains(hatData.id.ToString()))
+        {
+            eventHatList.Add(hatData.id.ToString());
+            PlayerPrefs.SetString("EventHatsReceived", string.Join(",", eventHatList));
+            PlayerPrefs.Save();
         }
     }
 

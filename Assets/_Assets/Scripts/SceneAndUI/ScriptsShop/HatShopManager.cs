@@ -5,6 +5,8 @@ public class HatShopManager : MonoBehaviour
 {
     public static HatShopManager Instance;
     public List<HatData> allHats;
+    public HashSet<int> eventHats = new HashSet<int>(); // Lưu ID mũ nhận từ sự kiện
+
     public Transform hatParent; // Vị trí đeo mũ trên Player
     public SeedManager seedManager;
 
@@ -34,11 +36,12 @@ public class HatShopManager : MonoBehaviour
     void Start()
     {
         LoadOwnedHats(); // Load danh sách mũ đã mua khi vào game
-
-
     }
 
-    
+    public bool CanPurchaseHat(HatData hatData)
+    {
+        return hatData.hatType == HatType.Purchasable;
+    }
 
     public void BuyOrEquipHat(HatData hatData)
     {
@@ -47,20 +50,28 @@ public class HatShopManager : MonoBehaviour
             audioSource1.Play();
             EquipHat(hatData);
         }
-        else if (seedManager.GetSeed() >= hatData.price)
+        else if (hatData.hatType == HatType.Purchasable) // Chỉ mua nếu là mũ có thể mua
         {
-            audioSource.Play();
+            if (seedManager.GetSeed() >= hatData.price)
+            {
+                audioSource.Play();
 
-            seedManager.SpendSeed(hatData.price);
-            ownedHats.Add(hatData.id);
-            SaveOwnedHats();
-            EquipHat(hatData);
+                seedManager.SpendSeed(hatData.price);
+                ownedHats.Add(hatData.id);
+                SaveOwnedHats();
+                EquipHat(hatData);
+            }
+            else
+            {
+                Debug.Log("Không đủ seed để mua mũ này!");
+            }
         }
         else
         {
-            Debug.Log("Không đủ seed để mua mũ này!");
+            Debug.Log("Mũ này chỉ có thể nhận qua sự kiện!");
         }
     }
+
 
     public void EquipHat(HatData hatData)
     {
@@ -81,6 +92,9 @@ public class HatShopManager : MonoBehaviour
         PlayerPrefs.Save();
     }
 
+
+
+
     void LoadOwnedHats()
     {
         string savedHats = PlayerPrefs.GetString("OwnedHats", "");
@@ -96,21 +110,51 @@ public class HatShopManager : MonoBehaviour
             }
         }
 
+        // Kiểm tra xem có mũ sự kiện nào đã nhận chưa
+        string eventHats = PlayerPrefs.GetString("EventHatsReceived", ""); // Lưu danh sách ID mũ sự kiện
+        if (!string.IsNullOrEmpty(eventHats))
+        {
+            string[] eventHatIDs = eventHats.Split(',');
+            bool equippedEventHat = false; // Biến kiểm tra có trang bị mũ sự kiện hay không
+
+            foreach (var id in eventHatIDs)
+            {
+                if (int.TryParse(id, out int eventHatID) && !ownedHats.Contains(eventHatID))
+                {
+                    HatData eventHat = allHats.Find(h => h.id == eventHatID);
+                    if (eventHat != null)
+                    {
+                        ownedHats.Add(eventHatID);
+                        equippedEventHat = true; // Đánh dấu đã trang bị mũ sự kiện
+                    }
+                }
+            }
+
+            SaveOwnedHats();
+
+            // Nếu chưa có mũ nào được trang bị, trang bị một mũ sự kiện
+            if (selectedHatID == -1 && equippedEventHat)
+            {
+                HatData firstEventHat = allHats.Find(h => ownedHats.Contains(h.id) && h.hatType == HatType.EventReward);
+                if (firstEventHat != null)
+                {
+                    EquipHat(firstEventHat);
+                }
+            }
+
+            // Xóa danh sách mũ sự kiện đã nhận để tránh nhận lại
+            PlayerPrefs.DeleteKey("EventHatsReceived");
+            PlayerPrefs.Save();
+        }
+
         selectedHatID = PlayerPrefs.GetInt("SelectedHatID", -1);
 
-        // Nếu chưa có mũ nào được chọn, chọn mũ đầu tiên trong danh sách
+        // Nếu không có mũ nào được trang bị, chọn mũ mặc định
         if (selectedHatID == -1 && allHats.Count > 0)
         {
             HatData firstHat = allHats[0];
-            if (ownedHats.Contains(firstHat.id)) // Kiểm tra xem mũ đầu tiên đã được mua chưa
+            if (ownedHats.Contains(firstHat.id))
             {
-                EquipHat(firstHat);
-            }
-            else
-            {
-                // Nếu chưa sở hữu mũ đầu tiên, thêm nó vào danh sách và trang bị luôn
-                ownedHats.Add(firstHat.id);
-                SaveOwnedHats();
                 EquipHat(firstHat);
             }
         }
@@ -123,6 +167,9 @@ public class HatShopManager : MonoBehaviour
             }
         }
     }
+
+
+
 
 
     void SaveOwnedHats()

@@ -21,6 +21,7 @@ public class HatButton : MonoBehaviour
     void OnHatButtonClick()
     {
         bool isOwned = hatShopManager.IsHatOwned(hatData.id);
+        bool isEventHat = hatData.hatType == HatType.EventReward;
         bool canBuy = hatShopManager.seedManager.GetSeed() >= hatData.price;
 
         if (isOwned)
@@ -31,6 +32,10 @@ public class HatButton : MonoBehaviour
             SetOff("ImageForPrice");
             hatShopManager.EquipHat(hatData);
             SaveUIState("Equipped");
+        }
+        else if (isEventHat)
+        {
+            Debug.Log("Mũ này là mũ sự kiện và chỉ có thể nhận từ sự kiện.");
         }
         else if (canBuy)
         {
@@ -46,6 +51,7 @@ public class HatButton : MonoBehaviour
             Debug.Log("Không đủ seed để mua mũ này!");
         }
     }
+
 
     void LoadUIState()
     {
@@ -65,6 +71,9 @@ public class HatButton : MonoBehaviour
             SetOff("Item");
             SetOff("ImageForPrice");
         }
+
+
+
     }
 
     void SaveUIState(string state)

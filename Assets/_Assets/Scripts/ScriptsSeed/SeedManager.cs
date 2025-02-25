@@ -23,8 +23,8 @@ public class SeedManager : MonoBehaviour
         totalseed += amount;
         seed += amount;
         SaveGold();
+        GoogleIntegration.Instance.UpdateLeaderboard();
 
-       
     }
 
     public void SpendSeed(int amount)
@@ -41,12 +41,14 @@ public class SeedManager : MonoBehaviour
         PlayerPrefs.SetInt("TotalSeed",totalseed);
         PlayerPrefs.SetInt("Seed", seed);
         PlayerPrefs.Save();
+        
     }
 
     void LoadGold()
     {
         seed = PlayerPrefs.GetInt("Seed", 0); // Mặc định là 0 nếu chưa có dữ liệu
         totalseed = PlayerPrefs.GetInt("TotalSeed", 0); // Mặc định là 0 nếu chưa có dữ liệu
+        
     }
 
     public int GetSeed()
