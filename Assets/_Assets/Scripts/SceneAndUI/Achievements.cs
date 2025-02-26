@@ -50,11 +50,18 @@ public class Achievements : MonoBehaviour
     
     void Check_1()
     {
-        IsClaimed_1 = PlayerPrefs.GetInt("IsClaimed_1" ,0);
+        IsClaimed_1 = PlayerPrefs.GetInt("IsClaimed_1");
         SeedCount_1 = PlayerPrefs.GetInt("TotalSeed");
         slider_1.value = SeedCount_1;
         Text_1.text = SeedCount_1 + "/1000";
-        if (SeedCount_1 >= 1000 && IsClaimed_1 == 0)
+        if(IsClaimed_1 == 1)
+        {
+            Button_1.SetActive(false);
+           Claimed_1.SetActive(true);
+            NOTClaimed_1.SetActive(false);
+        }
+
+        if (SeedCount_1 >= 1000)
         {
             Ready_1.SetActive(true);
             NotReady_1.SetActive(false);
@@ -68,8 +75,7 @@ public class Achievements : MonoBehaviour
         NOTClaimed_1.SetActive(false);
         Claimed_1.SetActive(true);
         SeedManager.Instance.AddSeed(500);
-        IsClaimed_1 = 1;
-        PlayerPrefs.SetInt("IsClaimed_1", IsClaimed_1);
+        PlayerPrefs.SetInt("IsClaimed_1", 1);
         PlayerPrefs.Save();
         
     }
@@ -80,10 +86,17 @@ public class Achievements : MonoBehaviour
         HatCount_1 = PlayerPrefs.GetInt("OwnedHatCount", 0);
         slider_2.value = HatCount_1;
         Text_2.text = HatCount_1 + "/5";
-        if (HatCount_1 >= 5 && IsClaimed_2 == 0)
+
+        if (IsClaimed_2 == 1)
         {
-            Ready_1.SetActive(true);
-            NotReady_1.SetActive(false);
+            Button_2.SetActive(false);
+            Claimed_2.SetActive(true);
+            NOTClaimed_2.SetActive(false);
+        }
+        if (HatCount_1 >= 5)
+        {
+            Ready_2.SetActive(true);
+            NotReady_2.SetActive(false);
         }
     }
 
@@ -94,8 +107,7 @@ public class Achievements : MonoBehaviour
         NOTClaimed_2.SetActive(false);
         Claimed_2.SetActive(true);
         SeedManager.Instance.AddSeed(500);
-        IsClaimed_2 = 1;
-        PlayerPrefs.SetInt("IsClaimed_2", IsClaimed_2);
+        PlayerPrefs.SetInt("IsClaimed_2", 1);
         PlayerPrefs.Save();
     }
 
@@ -105,7 +117,14 @@ public class Achievements : MonoBehaviour
         WayCount_1 = LevelManager.Instance.GetCompletedLevels();
         slider_3.value = WayCount_1;
         Text_3.text = WayCount_1 + "/8";
-        if (WayCount_1 >= 8 && IsClaimed_3 == 0)
+
+        if (IsClaimed_3 == 1)
+        {
+            Button_3.SetActive(false);
+            Claimed_3.SetActive(true);
+            NOTClaimed_3.SetActive(false);
+        }
+        if (WayCount_1 >= 8)
         {
             Ready_3.SetActive(true);
             NotReady_3.SetActive(false);
@@ -119,8 +138,7 @@ public class Achievements : MonoBehaviour
         NOTClaimed_3.SetActive(false);
         Claimed_3.SetActive(true);
         SeedManager.Instance.AddSeed(250);
-        IsClaimed_3 = 1;
-        PlayerPrefs.SetInt("IsClaimed_3", IsClaimed_3);
+        PlayerPrefs.SetInt("IsClaimed_3", 1);
         PlayerPrefs.Save();
     }
 }
