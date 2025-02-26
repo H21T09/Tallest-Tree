@@ -23,7 +23,7 @@ public class ButtonChoose : MonoBehaviour
             }
             else
             {
-                buttons[i].image.color = Color.black; // Tắt màu các button khác
+                buttons[i].image.color = new Color(0.3f, 0.2f, 0.2f); // Tắt màu các button khác
             }
         }
     }
@@ -33,7 +33,8 @@ public class ButtonChoose : MonoBehaviour
         if (selectedButton != null)
         {
             // Đổi màu button trước đó về bình thường
-            selectedButton.image.color = Color.black;
+            selectedButton.image.color = new Color(0.2f, 0.2f, 0.2f); // Màu bạc nhạt
+
         }
 
         // Cập nhật button mới được chọn

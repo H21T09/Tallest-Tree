@@ -567,7 +567,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 46979651}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 338309572}
+        m_TargetAssemblyTypeName: DailyLogin, Assembly-CSharp
+        m_MethodName: GetReward_1
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &46979651
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5067,6 +5079,79 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 321085170}
   m_CullTransparentMesh: 1
+--- !u!1 &338309571
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 338309573}
+  - component: {fileID: 338309572}
+  m_Layer: 0
+  m_Name: DailyLogin
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &338309572
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 338309571}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0781fe5eaa286d42bcabdfb95657071, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LastDate: 0
+  Day_1: 0
+  Ready_1: {fileID: 1106896123}
+  NotReady_1: {fileID: 203172100}
+  IsClaimed_1: {fileID: 312503616}
+  Day_2: 0
+  Ready_2: {fileID: 2001900234}
+  NotReady_2: {fileID: 1180479639}
+  IsClaimed_2: {fileID: 176428459}
+  Day_3: 0
+  Ready_3: {fileID: 15876727}
+  NotReady_3: {fileID: 857199891}
+  IsClaimed_3: {fileID: 358389647}
+  Day_4: 0
+  Ready_4: {fileID: 43020126}
+  NotReady_4: {fileID: 475855360}
+  IsClaimed_4: {fileID: 616326677}
+  Day_5: 0
+  Ready_5: {fileID: 1720881797}
+  NotReady_5: {fileID: 1604634196}
+  IsClaimed_5: {fileID: 440705340}
+  Day_6: 0
+  Ready_6: {fileID: 283149825}
+  NotReady_6: {fileID: 1852659170}
+  IsClaimed_6: {fileID: 1481860099}
+  Day_7: 0
+  Ready_7: {fileID: 1298963740}
+  NotReady_7: {fileID: 823214198}
+  IsClaimed_7: {fileID: 1234719942}
+--- !u!4 &338309573
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 338309571}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 64.753815, y: 84.34992, z: 28140.824}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &346919457
 GameObject:
   m_ObjectHideFlags: 0
@@ -6158,7 +6243,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 406630200}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 338309572}
+        m_TargetAssemblyTypeName: DailyLogin, Assembly-CSharp
+        m_MethodName: GetReward_7
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &406630200
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8060,7 +8157,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 490179661}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 338309572}
+        m_TargetAssemblyTypeName: DailyLogin, Assembly-CSharp
+        m_MethodName: GetReward_4
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &490179661
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9912,7 +10021,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 560257279}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 338309572}
+        m_TargetAssemblyTypeName: DailyLogin, Assembly-CSharp
+        m_MethodName: GetReward_3
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &560257279
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11475,7 +11596,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 637251159}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 338309572}
+        m_TargetAssemblyTypeName: DailyLogin, Assembly-CSharp
+        m_MethodName: GetReward_2
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &637251159
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14227,7 +14360,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 768631202}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 338309572}
+        m_TargetAssemblyTypeName: DailyLogin, Assembly-CSharp
+        m_MethodName: GetReward_5
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &768631202
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -33251,7 +33396,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2049509027}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 338309572}
+        m_TargetAssemblyTypeName: DailyLogin, Assembly-CSharp
+        m_MethodName: GetReward_6
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2049509027
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -35280,6 +35437,18 @@ PrefabInstance:
       propertyPath: Trandition
       value: 
       objectReference: {fileID: 1220234718}
+    - target: {fileID: 3331542592857340166, guid: c295ddc7c4d371d47a642c125f68880f, type: 3}
+      propertyPath: m_Color.b
+      value: 0.29803923
+      objectReference: {fileID: 0}
+    - target: {fileID: 3331542592857340166, guid: c295ddc7c4d371d47a642c125f68880f, type: 3}
+      propertyPath: m_Color.g
+      value: 0.29803923
+      objectReference: {fileID: 0}
+    - target: {fileID: 3331542592857340166, guid: c295ddc7c4d371d47a642c125f68880f, type: 3}
+      propertyPath: m_Color.r
+      value: 0.29803923
+      objectReference: {fileID: 0}
     - target: {fileID: 3331542593046398732, guid: c295ddc7c4d371d47a642c125f68880f, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5

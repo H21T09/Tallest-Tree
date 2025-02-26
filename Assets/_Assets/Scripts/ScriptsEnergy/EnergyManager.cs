@@ -6,13 +6,13 @@ using TMPro;
 
 public class EnergyManager : MonoBehaviour
 {
-    public int maxEnergy = 5;
+    public int maxEnergy = 5;  // maxEnergy có thể thay đổi nếu cần
     public int currentEnergy;
     public TMP_Text energyText;
     public TMP_Text timerText;
     private DateTime lastUsedTime;
     private bool isRegenerating = false;
-    private int regenerationTime = 3600; // 1 giờ để hồi toàn bộ 5 năng lượng
+    private int regenerationTime = 3600; // 1 giờ để hồi toàn bộ năng lượng (có thể điều chỉnh)
     private int energyRegenInterval; // Thời gian hồi 1 năng lượng
 
     void Start()
@@ -23,6 +23,8 @@ public class EnergyManager : MonoBehaviour
         UpdateUI();
     }
 
+
+    // Hàm sử dụng năng lượng
     public void UseEnergy()
     {
         if (currentEnergy > 0)
@@ -33,6 +35,7 @@ public class EnergyManager : MonoBehaviour
             PlayerPrefs.Save();
         }
 
+        // Kiểm tra và bắt đầu hồi năng lượng nếu chưa đạt max
         if (currentEnergy < maxEnergy && !isRegenerating)
         {
             StartCoroutine(StartEnergyRegeneration());
@@ -41,8 +44,11 @@ public class EnergyManager : MonoBehaviour
         UpdateUI();
     }
 
+    // Cập nhật hàm hồi năng lượng, cho phép cộng thêm năng lượng tự do
     private IEnumerator StartEnergyRegeneration()
     {
+        if (currentEnergy >= maxEnergy) yield break;  // Nếu năng lượng >= maxEnergy thì không cần hồi
+
         isRegenerating = true;
         lastUsedTime = DateTime.Parse(PlayerPrefs.GetString("LastUsedTime", DateTime.Now.ToString()));
 
@@ -53,7 +59,7 @@ public class EnergyManager : MonoBehaviour
 
             if (energyToRestore > 0)
             {
-                currentEnergy = Mathf.Min(currentEnergy + energyToRestore, maxEnergy);
+                currentEnergy = Mathf.Min(currentEnergy + energyToRestore, maxEnergy);  // Cập nhật năng lượng
                 lastUsedTime = DateTime.Now;
                 PlayerPrefs.SetInt("Energy", currentEnergy);
                 PlayerPrefs.SetString("LastUsedTime", lastUsedTime.ToString());
@@ -69,9 +75,11 @@ public class EnergyManager : MonoBehaviour
         isRegenerating = false;
     }
 
+    // Cập nhật năng lượng khi load từ PlayerPrefs
     private void LoadEnergy()
     {
-        currentEnergy = PlayerPrefs.GetInt("Energy", maxEnergy);
+        currentEnergy = PlayerPrefs.GetInt("Energy", 0);
+        Debug.Log("current" + currentEnergy);
         string lastUsed = PlayerPrefs.GetString("LastUsedTime", "");
 
         if (!string.IsNullOrEmpty(lastUsed))
@@ -82,7 +90,7 @@ public class EnergyManager : MonoBehaviour
 
             if (energyToRestore > 0)
             {
-                currentEnergy = Mathf.Min(currentEnergy + energyToRestore, maxEnergy);
+                currentEnergy = Mathf.Min(currentEnergy + energyToRestore, maxEnergy);  // Không vượt quá maxEnergy
                 PlayerPrefs.SetInt("Energy", currentEnergy);
                 PlayerPrefs.SetString("LastUsedTime", DateTime.Now.ToString());
                 PlayerPrefs.Save();
@@ -95,6 +103,7 @@ public class EnergyManager : MonoBehaviour
         }
     }
 
+    // Cập nhật thời gian còn lại cho đến khi hồi năng lượng
     private IEnumerator UpdateTimerCoroutine()
     {
         while (true)
@@ -109,6 +118,7 @@ public class EnergyManager : MonoBehaviour
         }
     }
 
+    // Cập nhật UI
     private void UpdateUI()
     {
         energyText.text = currentEnergy + "/" + maxEnergy;
@@ -124,6 +134,7 @@ public class EnergyManager : MonoBehaviour
         }
     }
 
+    // Cập nhật UI thời gian hồi năng lượng
     private void UpdateTimerUI(int secondsRemaining)
     {
         TimeSpan timeSpan = TimeSpan.FromSeconds(secondsRemaining);
@@ -136,5 +147,16 @@ public class EnergyManager : MonoBehaviour
         PlayerPrefs.DeleteKey("Energy");
         PlayerPrefs.DeleteKey("LastUsedTime");
         PlayerPrefs.Save();
+    }
+
+    // Hàm để thêm năng lượng từ bên ngoài vào, không bị giới hạn
+    public void AddEnergy(int amount)
+    {
+        currentEnergy += amount;
+        if (currentEnergy > maxEnergy)
+            currentEnergy = maxEnergy;  // Giới hạn năng lượng tối đa nếu cần
+        PlayerPrefs.SetInt("Energy", currentEnergy);
+        PlayerPrefs.Save();
+        UpdateUI();
     }
 }

@@ -2575,6 +2575,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2044463560}
     - target: {fileID: 505076771058463091, guid: 56468bce906f23d499e7b040d4e016f8, type: 3}
+      propertyPath: totalSeeds.Array.size
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 505076771058463091, guid: 56468bce906f23d499e7b040d4e016f8, type: 3}
       propertyPath: totalSeeds.Array.data[0]
       value: 
       objectReference: {fileID: 1184754143}
