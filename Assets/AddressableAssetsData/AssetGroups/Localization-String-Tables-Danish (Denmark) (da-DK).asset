@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Localization-String-Tables-Danish (Denmark) (da-DK)
+  m_EditorClassIdentifier: 
+  m_GroupName: Localization-String-Tables-Danish (Denmark) (da-DK)
+  m_Data:
+    m_SerializedData: []
+  m_GUID: b80d4297932961f41bdf7cb5f9dad7dc
+  m_SerializeEntries:
+  - m_GUID: 2aa4088b401eb1741a8460a5f1b0099d
+    m_Address: StringExampleTable_da-DK
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-da-DK
+    - Preload
+  - m_GUID: 74ff80736c5246a49be12396744e33f9
+    m_Address: Term Of Use_da-DK
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-da-DK
+    - Preload
+  m_ReadOnly: 1
+  m_Settings: {fileID: 11400000, guid: d71cd47c4fa9c6049aad7c7d39ce5b31, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: e7ea716decf570a4d8e8e3777ddeff98, type: 2}
+    - {fileID: 11400000, guid: 160a294bd7a3c684580999c7ee26d1d7, type: 2}

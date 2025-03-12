@@ -1,0 +1,51 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: StringExampleTable_pt-BR
+  m_EditorClassIdentifier: 
+  m_LocaleId:
+    m_Code: pt-BR
+  m_SharedData: {fileID: 11400000, guid: 606a558b44187204086a5122658ff15c, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 22268600320
+    m_Localized: "Op\xE7\xE3o"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12652769173504
+    m_Localized: Termos de uso
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13025525358592
+    m_Localized: "Pol\xEDtica de Privacidade"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13895059103744
+    m_Localized: Entrar no Discord
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14039745814528
+    m_Localized: Acompanhe o desenvolvimento
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14142153940992
+    m_Localized: Avalie o jogo
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14156448129024
+    m_Localized: "Deixe os outros saberem o que voc\xEA pensa"
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []
