@@ -1,28 +1,54 @@
 ﻿using UnityEngine;
 using GooglePlayGames;
 using GooglePlayGames.BasicApi;
-using UnityEngine.SocialPlatforms;
+using UnityEngine.UI;
 using TMPro;
 
 public class CheckGooglePlayGames : MonoBehaviour
 {
-    public TMP_Text statusText; // Kéo một Text UI vào đây để hiển thị kết quả
+    public Button loginButton;
+    public TMP_Text buttonText; // Text để hiển thị trạng thái
 
     void Start()
     {
+        // Cấu hình Google Play Games
         PlayGamesPlatform.Activate();
-        Social.localUser.Authenticate(success =>
+
+        // Kiểm tra trạng thái đăng nhập hiện tại
+        UpdateButtonState();
+
+        // Gán sự kiện khi bấm button
+        if (loginButton != null)
+            loginButton.onClick.AddListener(ToggleLogin);
+    }
+
+    void ToggleLogin()
+    {
+            SignIn();
+    }
+
+    void SignIn()
+    {
+        Social.localUser.Authenticate((bool success) =>
         {
             if (success)
             {
-                Debug.Log("Đã kết nối với Google Play Games!");
-                statusText.text = "";
+                Debug.Log("Đăng nhập thành công!");
             }
             else
             {
-                Debug.Log("Chưa kết nối với Google Play Games!");
-                statusText.text = "";
+                Debug.Log("Đăng nhập thất bại!");
             }
+            UpdateButtonState();
         });
+    }
+
+
+    void UpdateButtonState()
+    {
+        if (buttonText != null)
+        {
+            buttonText.text = Social.localUser.authenticated ? "LOGGED IN" : "NOT LOGGED IN YET";
+        }
     }
 }

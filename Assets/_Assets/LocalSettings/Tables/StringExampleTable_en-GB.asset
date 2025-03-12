@@ -171,6 +171,50 @@ MonoBehaviour:
     m_Localized: DAY 7
     m_Metadata:
       m_Items: []
+  - m_Id: 381949928529920
+    m_Localized: VICTORY
+    m_Metadata:
+      m_Items: []
+  - m_Id: 382561088954368
+    m_Localized: CONTINUE
+    m_Metadata:
+      m_Items: []
+  - m_Id: 383091584524288
+    m_Localized: PERFECT CLEAR
+    m_Metadata:
+      m_Items: []
+  - m_Id: 382969375088640
+    m_Localized: FIRST WIN
+    m_Metadata:
+      m_Items: []
+  - m_Id: 383955846029312
+    m_Localized: OUT OF ATTEMPTS
+    m_Metadata:
+      m_Items: []
+  - m_Id: 383957787992064
+    m_Localized: START OVER
+    m_Metadata:
+      m_Items: []
+  - m_Id: 385505792352256
+    m_Localized: HOW TO PLAY
+    m_Metadata:
+      m_Items: []
+  - m_Id: 386638761943040
+    m_Localized: ACHIEVEMENTS
+    m_Metadata:
+      m_Items: []
+  - m_Id: 387551266332672
+    m_Localized: COMPLETE ROUTE 1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 387552243605504
+    m_Localized: OWN 5 HELMETS
+    m_Metadata:
+      m_Items: []
+  - m_Id: 387554017796096
+    m_Localized: GATHER 1000 SEEDS
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

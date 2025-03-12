@@ -171,6 +171,50 @@ MonoBehaviour:
     m_Localized: TAG 7
     m_Metadata:
       m_Items: []
+  - m_Id: 381949928529920
+    m_Localized: SIEG
+    m_Metadata:
+      m_Items: []
+  - m_Id: 382561088954368
+    m_Localized: FORTSETZEN
+    m_Metadata:
+      m_Items: []
+  - m_Id: 382969375088640
+    m_Localized: ERSTER SIEG
+    m_Metadata:
+      m_Items: []
+  - m_Id: 383091584524288
+    m_Localized: "PERFEKTE R\xC4UMUNG"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 383955846029312
+    m_Localized: KEINE VERSUCHE MEHR
+    m_Metadata:
+      m_Items: []
+  - m_Id: 383957787992064
+    m_Localized: NEU STARTEN
+    m_Metadata:
+      m_Items: []
+  - m_Id: 385505792352256
+    m_Localized: WIE MAN SPIELT
+    m_Metadata:
+      m_Items: []
+  - m_Id: 386638761943040
+    m_Localized: ERRUNGENSCHAFTEN
+    m_Metadata:
+      m_Items: []
+  - m_Id: 387551266332672
+    m_Localized: ROUTE 1 ABSCHLIESSEN
+    m_Metadata:
+      m_Items: []
+  - m_Id: 387552243605504
+    m_Localized: BESITZE 5 HELME
+    m_Metadata:
+      m_Items: []
+  - m_Id: 387554017796096
+    m_Localized: SAMMLE 1000 SAMEN
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

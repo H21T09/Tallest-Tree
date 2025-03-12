@@ -6387,6 +6387,14 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1668985888}
+    - target: {fileID: 944433849, guid: c824fec63e662d14180e965ac967fd80, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1668985888}
+    - target: {fileID: 944433849, guid: c824fec63e662d14180e965ac967fd80, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: CloseOptiony
+      objectReference: {fileID: 0}
     - target: {fileID: 1661755740, guid: c824fec63e662d14180e965ac967fd80, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -6402,6 +6410,14 @@ PrefabInstance:
     - target: {fileID: 1834086461, guid: c824fec63e662d14180e965ac967fd80, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: LoadMenuScene
+      objectReference: {fileID: 0}
+    - target: {fileID: 1141686298858977123, guid: c824fec63e662d14180e965ac967fd80, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1668985888}
+    - target: {fileID: 1141686298858977123, guid: c824fec63e662d14180e965ac967fd80, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OpenOptiony
       objectReference: {fileID: 0}
     - target: {fileID: 7937670800041328506, guid: c824fec63e662d14180e965ac967fd80, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target

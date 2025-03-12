@@ -171,6 +171,50 @@ MonoBehaviour:
     m_Localized: DIA 7
     m_Metadata:
       m_Items: []
+  - m_Id: 381949928529920
+    m_Localized: "VIT\xD3RIA"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 382561088954368
+    m_Localized: CONTINUAR
+    m_Metadata:
+      m_Items: []
+  - m_Id: 382969375088640
+    m_Localized: "PRIMEIRA VIT\xD3RIA"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 383091584524288
+    m_Localized: LIMPEZA PERFEITA
+    m_Metadata:
+      m_Items: []
+  - m_Id: 383955846029312
+    m_Localized: SEM MAIS TENTATIVAS
+    m_Metadata:
+      m_Items: []
+  - m_Id: 383957787992064
+    m_Localized: "RECOME\xC7AR"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 385505792352256
+    m_Localized: COMO JOGAR
+    m_Metadata:
+      m_Items: []
+  - m_Id: 386638761943040
+    m_Localized: CONQUISTAS
+    m_Metadata:
+      m_Items: []
+  - m_Id: 387551266332672
+    m_Localized: CONCLUIR A ROTA 1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 387552243605504
+    m_Localized: TER 5 CAPACETES
+    m_Metadata:
+      m_Items: []
+  - m_Id: 387554017796096
+    m_Localized: COLETAR 1000 SEMENTES
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

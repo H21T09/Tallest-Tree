@@ -171,6 +171,50 @@ MonoBehaviour:
     m_Localized: "D\xCDA 7"
     m_Metadata:
       m_Items: []
+  - m_Id: 381949928529920
+    m_Localized: VICTORIA
+    m_Metadata:
+      m_Items: []
+  - m_Id: 382561088954368
+    m_Localized: CONTINUAR
+    m_Metadata:
+      m_Items: []
+  - m_Id: 382969375088640
+    m_Localized: PRIMERA VICTORIA
+    m_Metadata:
+      m_Items: []
+  - m_Id: 383091584524288
+    m_Localized: LIMPIEZA PERFECTA
+    m_Metadata:
+      m_Items: []
+  - m_Id: 383955846029312
+    m_Localized: "SIN M\xC1S INTENTOS"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 383957787992064
+    m_Localized: EMPEZAR DE NUEVO
+    m_Metadata:
+      m_Items: []
+  - m_Id: 385505792352256
+    m_Localized: "C\xD3MO JUGAR"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 386638761943040
+    m_Localized: LOGROS
+    m_Metadata:
+      m_Items: []
+  - m_Id: 387551266332672
+    m_Localized: COMPLETAR LA RUTA 1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 387552243605504
+    m_Localized: POSEER 5 CASCOS
+    m_Metadata:
+      m_Items: []
+  - m_Id: 387554017796096
+    m_Localized: RECOGER 1000 SEMILLAS
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

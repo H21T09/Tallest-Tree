@@ -171,6 +171,50 @@ MonoBehaviour:
     m_Localized: JOUR 7
     m_Metadata:
       m_Items: []
+  - m_Id: 381949928529920
+    m_Localized: VICTOIRE
+    m_Metadata:
+      m_Items: []
+  - m_Id: 382561088954368
+    m_Localized: CONTINUER
+    m_Metadata:
+      m_Items: []
+  - m_Id: 382969375088640
+    m_Localized: "PREMI\xC8RE VICTOIRE"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 383091584524288
+    m_Localized: "CLART\xC9 PARFAITE"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 383955846029312
+    m_Localized: PLUS DE TENTATIVES
+    m_Metadata:
+      m_Items: []
+  - m_Id: 383957787992064
+    m_Localized: RECOMMENCER
+    m_Metadata:
+      m_Items: []
+  - m_Id: 385505792352256
+    m_Localized: COMMENT JOUER
+    m_Metadata:
+      m_Items: []
+  - m_Id: 386638761943040
+    m_Localized: "R\xC9ALISATIONS"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 387551266332672
+    m_Localized: "COMPL\xC9TER L'ITIN\xC9RAIRE 1"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 387552243605504
+    m_Localized: POSSEDER 5 CASQUES
+    m_Metadata:
+      m_Items: []
+  - m_Id: 387554017796096
+    m_Localized: "R\xC9CUP\xC9RER 1000 GRAINES"
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

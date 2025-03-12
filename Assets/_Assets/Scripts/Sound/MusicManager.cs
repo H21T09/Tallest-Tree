@@ -63,7 +63,7 @@ public class MusicManager : MonoBehaviour
 
             if (isMuted && menuScenes.Contains(currentScene))
                 Instance.musicSource.Stop();
-            else if (!Instance.musicSource.isPlaying)
+            else if (!Instance.musicSource.isPlaying && menuScenes.Contains(currentScene))
                 Instance.musicSource.Play();
         }
     }

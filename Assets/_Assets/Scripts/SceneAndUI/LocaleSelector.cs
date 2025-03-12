@@ -10,7 +10,7 @@ public class LocaleSelector : MonoBehaviour
 
     private void Awake()
     {
-        int ID = PlayerPrefs.GetInt("LocaleKey", 0);
+        int ID = PlayerPrefs.GetInt("LocaleKey", 2);
         ChangeLocale(ID);
 
     }
