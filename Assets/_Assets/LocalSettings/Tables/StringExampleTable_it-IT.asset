@@ -46,6 +46,131 @@ MonoBehaviour:
     m_Localized: Fai sapere agli altri cosa ne pensi
     m_Metadata:
       m_Items: []
+  - m_Id: 308783627624448
+    m_Localized: Crediti
+    m_Metadata:
+      m_Items: []
+  - m_Id: 309728440737792
+    m_Localized: Costruire
+    m_Metadata:
+      m_Items: []
+  - m_Id: 310300745129984
+    m_Localized: GIOCARE
+    m_Metadata:
+      m_Items: []
+  - m_Id: 310677892751360
+    m_Localized: ALBERO GIGANTE
+    m_Metadata:
+      m_Items: []
+  - m_Id: 311153862369280
+    m_Localized: PERCORSO
+    m_Metadata:
+      m_Items: []
+  - m_Id: 314108028116992
+    m_Localized: CASCHI
+    m_Metadata:
+      m_Items: []
+  - m_Id: 314687412494336
+    m_Localized: SPENDERE
+    m_Metadata:
+      m_Items: []
+  - m_Id: 318715215208448
+    m_Localized: AUMENTARE IL MASSIMO
+    m_Metadata:
+      m_Items: []
+  - m_Id: 320997252128768
+    m_Localized: Monte Fuji
+    m_Metadata:
+      m_Items: []
+  - m_Id: 321353394675712
+    m_Localized: IN ARRIVO
+    m_Metadata:
+      m_Items: []
+  - m_Id: 321970892693504
+    m_Localized: Rifornimenti
+    m_Metadata:
+      m_Items: []
+  - m_Id: 322190477090816
+    m_Localized: "TUTTI GLI ACQUISTI SUPPORTANO L'ECOSISTEMA DELL'ALBERO PI\xD9 ALTO
+      PER AIUTARE I GIOCATORI A PIANTARE PI\xD9 ALBERI"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 322931660939264
+    m_Localized: RECUPERARE GLI ACQUISTI
+    m_Metadata:
+      m_Items: []
+  - m_Id: 323927250296832
+    m_Localized: CASCO D'ORO
+    m_Metadata:
+      m_Items: []
+  - m_Id: 324105722126336
+    m_Localized: ATTREZZATURA EDIZIONE LIMITATA
+    m_Metadata:
+      m_Items: []
+  - m_Id: 324447847309312
+    m_Localized: LA TUA FORESTA
+    m_Metadata:
+      m_Items: []
+  - m_Id: 326381723443200
+    m_Localized: COLLEZIONARE
+    m_Metadata:
+      m_Items: []
+  - m_Id: 328289494228992
+    m_Localized: PIANTARE ALBERI
+    m_Metadata:
+      m_Items: []
+  - m_Id: 328896187719680
+    m_Localized: STADIO
+    m_Metadata:
+      m_Items: []
+  - m_Id: 329216729014272
+    m_Localized: PIANTARE ALBERI
+    m_Metadata:
+      m_Items: []
+  - m_Id: 329889898029056
+    m_Localized: SALIRE DI LIVELLO PER PIANTARE UN ALBERO NEL MONDO REALE
+    m_Metadata:
+      m_Items: []
+  - m_Id: 330730000343040
+    m_Localized: CAPITO
+    m_Metadata:
+      m_Items: []
+  - m_Id: 331509339774976
+    m_Localized: REGALO DI ACCESSO QUOTIDIANO
+    m_Metadata:
+      m_Items: []
+  - m_Id: 331667678945280
+    m_Localized: RICHIEDERE
+    m_Metadata:
+      m_Items: []
+  - m_Id: 339123637313536
+    m_Localized: GIORNO 1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 339146651459584
+    m_Localized: GIORNO 2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 339160308113408
+    m_Localized: GIORNO 3
+    m_Metadata:
+      m_Items: []
+  - m_Id: 339161079865344
+    m_Localized: GIORNO 4
+    m_Metadata:
+      m_Items: []
+  - m_Id: 339161818062848
+    m_Localized: GIORNO 5
+    m_Metadata:
+      m_Items: []
+  - m_Id: 339162623369216
+    m_Localized: GIORNO 6
+    m_Metadata:
+      m_Items: []
+  - m_Id: 339234127863808
+    m_Localized: GIORNO 7
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

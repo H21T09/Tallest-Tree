@@ -46,6 +46,131 @@ MonoBehaviour:
     m_Localized: "Haz que los dem\xE1s sepan lo que piensas"
     m_Metadata:
       m_Items: []
+  - m_Id: 308783627624448
+    m_Localized: "Cr\xE9ditos"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 309728440737792
+    m_Localized: Construir
+    m_Metadata:
+      m_Items: []
+  - m_Id: 310300745129984
+    m_Localized: JOGAR
+    m_Metadata:
+      m_Items: []
+  - m_Id: 310677892751360
+    m_Localized: "\xC1RBOL GIGANTE"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 311153862369280
+    m_Localized: RUTA
+    m_Metadata:
+      m_Items: []
+  - m_Id: 314108028116992
+    m_Localized: CASCOS
+    m_Metadata:
+      m_Items: []
+  - m_Id: 314687412494336
+    m_Localized: GASTAR
+    m_Metadata:
+      m_Items: []
+  - m_Id: 318715215208448
+    m_Localized: "AUMENTAR EL M\xC1XIMO"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 320997252128768
+    m_Localized: Monte Fuji
+    m_Metadata:
+      m_Items: []
+  - m_Id: 321353394675712
+    m_Localized: "PR\xD3XIMAMENTE"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 321970892693504
+    m_Localized: SUMINISTROS
+    m_Metadata:
+      m_Items: []
+  - m_Id: 322190477090816
+    m_Localized: "TODAS LAS COMPRAS APOYAN EL ECOSISTEMA DEL \xC1RBOL M\xC1S ALTO
+      PARA AYUDAR A LOS JUGADORES A PLANTAR M\xC1S \xC1RBOLES"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 322931660939264
+    m_Localized: "RECUPERAR COMPRAS\t"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 323927250296832
+    m_Localized: CASCO DORADO
+    m_Metadata:
+      m_Items: []
+  - m_Id: 324105722126336
+    m_Localized: "EQUIPAMIENTO EDICI\xD3N LIMITADA"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 324447847309312
+    m_Localized: TU BOSQUE
+    m_Metadata:
+      m_Items: []
+  - m_Id: 326381723443200
+    m_Localized: COLECCIONAR
+    m_Metadata:
+      m_Items: []
+  - m_Id: 328289494228992
+    m_Localized: "PLANTAR \xC1RBOLES"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 328896187719680
+    m_Localized: ETAPA
+    m_Metadata:
+      m_Items: []
+  - m_Id: 329216729014272
+    m_Localized: "PLANTAR \xC1RBOLES"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 329889898029056
+    m_Localized: "SUBE DE NIVEL PARA PLANTAR UN \xC1RBOL EN EL MUNDO REAL"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 330730000343040
+    m_Localized: ENTENDIDO
+    m_Metadata:
+      m_Items: []
+  - m_Id: 331509339774976
+    m_Localized: REGALO DE INICIO DIARIO
+    m_Metadata:
+      m_Items: []
+  - m_Id: 331667678945280
+    m_Localized: RECLAMAR
+    m_Metadata:
+      m_Items: []
+  - m_Id: 339123637313536
+    m_Localized: "D\xCDA 1"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 339146651459584
+    m_Localized: "D\xCDA 2"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 339160308113408
+    m_Localized: "D\xCDA 3"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 339161079865344
+    m_Localized: "D\xCDA 4"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 339161818062848
+    m_Localized: "D\xCDA 5"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 339162623369216
+    m_Localized: "D\xCDA 6"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 339234127863808
+    m_Localized: "D\xCDA 7"
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

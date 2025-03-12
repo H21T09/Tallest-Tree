@@ -2251,6 +2251,63 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3577186328570136754, guid: 1c0bffaf771580446ae4a30392fef610, type: 3}
   m_PrefabInstance: {fileID: 1235122454}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &580551811
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1705814886443049060, guid: 26a284141eb566a428c5c6a32698bfcb, type: 3}
+      propertyPath: m_RootOrder
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 1705814886443049060, guid: 26a284141eb566a428c5c6a32698bfcb, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1705814886443049060, guid: 26a284141eb566a428c5c6a32698bfcb, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1705814886443049060, guid: 26a284141eb566a428c5c6a32698bfcb, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1705814886443049060, guid: 26a284141eb566a428c5c6a32698bfcb, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1705814886443049060, guid: 26a284141eb566a428c5c6a32698bfcb, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1705814886443049060, guid: 26a284141eb566a428c5c6a32698bfcb, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1705814886443049060, guid: 26a284141eb566a428c5c6a32698bfcb, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1705814886443049060, guid: 26a284141eb566a428c5c6a32698bfcb, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1705814886443049060, guid: 26a284141eb566a428c5c6a32698bfcb, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1705814886443049060, guid: 26a284141eb566a428c5c6a32698bfcb, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1705814886443049062, guid: 26a284141eb566a428c5c6a32698bfcb, type: 3}
+      propertyPath: m_Name
+      value: LocalizationManager
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 26a284141eb566a428c5c6a32698bfcb, type: 3}
 --- !u!1001 &600251128
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7312,6 +7369,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 624023930}
+    - target: {fileID: 835205691, guid: c824fec63e662d14180e965ac967fd80, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 870451888, guid: c824fec63e662d14180e965ac967fd80, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -7320,6 +7381,14 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 624023926}
+    - target: {fileID: 944433849, guid: c824fec63e662d14180e965ac967fd80, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: CloseOptiony
+      objectReference: {fileID: 0}
+    - target: {fileID: 944433849, guid: c824fec63e662d14180e965ac967fd80, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: UIControl, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 1661755740, guid: c824fec63e662d14180e965ac967fd80, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 

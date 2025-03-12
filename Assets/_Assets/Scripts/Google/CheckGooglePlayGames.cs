@@ -16,12 +16,12 @@ public class CheckGooglePlayGames : MonoBehaviour
             if (success)
             {
                 Debug.Log("Đã kết nối với Google Play Games!");
-                statusText.text = "Đăng nhập thành công!";
+                statusText.text = "";
             }
             else
             {
                 Debug.Log("Chưa kết nối với Google Play Games!");
-                statusText.text = "Đăng nhập thất bại!";
+                statusText.text = "";
             }
         });
     }

@@ -63,7 +63,7 @@ public class WaySelector : MonoBehaviour
 
     private void Update()
     {
-        WayNumber.text = "STAGE " + selectedWay;
+        WayNumber.text = "" + selectedWay;
     }
 
     void SelectWay(int wayIndex)

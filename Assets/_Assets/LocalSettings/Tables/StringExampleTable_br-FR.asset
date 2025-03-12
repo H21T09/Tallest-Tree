@@ -46,6 +46,131 @@ MonoBehaviour:
     m_Localized: Rejoindre Discord
     m_Metadata:
       m_Items: []
+  - m_Id: 308783627624448
+    m_Localized: "Cr\xE9dits"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 309728440737792
+    m_Localized: "Construire\t"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 310300745129984
+    m_Localized: JOUER
+    m_Metadata:
+      m_Items: []
+  - m_Id: 310677892751360
+    m_Localized: "ARBRE G\xC9ANT"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 311153862369280
+    m_Localized: "ITIN\xC9RAIRE"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 314108028116992
+    m_Localized: CASQUES
+    m_Metadata:
+      m_Items: []
+  - m_Id: 314687412494336
+    m_Localized: "D\xC9PENSER"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 318715215208448
+    m_Localized: AUGMENTER LE MAXIMUM
+    m_Metadata:
+      m_Items: []
+  - m_Id: 320997252128768
+    m_Localized: Mont Fuji
+    m_Metadata:
+      m_Items: []
+  - m_Id: 321353394675712
+    m_Localized: "ARRIVE BIENT\xD4T"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 321970892693504
+    m_Localized: FOURNITURES
+    m_Metadata:
+      m_Items: []
+  - m_Id: 322190477090816
+    m_Localized: "TOUTES LES ACHATS SOUTIENNENT L'\xC9COSYST\xC8ME DE L'ARBRE LE
+      PLUS HAUT POUR AIDER LES JOUEURS \xC0 PLANTER PLUS D'ARBRES"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 322931660939264
+    m_Localized: "R\xC9CUP\xC9RER LES ACHATS"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 323927250296832
+    m_Localized: CASQUE D'OR
+    m_Metadata:
+      m_Items: []
+  - m_Id: 324105722126336
+    m_Localized: "\xC9QUIPEMENT \xC9DITION LIMIT\xC9E\t"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 324447847309312
+    m_Localized: "VOTRE FOR\xCAT"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 326381723443200
+    m_Localized: COLLECTER
+    m_Metadata:
+      m_Items: []
+  - m_Id: 328289494228992
+    m_Localized: PLANTER DES ARBRES
+    m_Metadata:
+      m_Items: []
+  - m_Id: 328896187719680
+    m_Localized: STADE
+    m_Metadata:
+      m_Items: []
+  - m_Id: 329216729014272
+    m_Localized: PLANTER DES ARBRES
+    m_Metadata:
+      m_Items: []
+  - m_Id: 329889898029056
+    m_Localized: "NIVELEZ VOTRE PERSONNAGE POUR PLANTER UN ARBRE DANS LE MONDE R\xC9EL"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 330730000343040
+    m_Localized: J'AI COMPRIS
+    m_Metadata:
+      m_Items: []
+  - m_Id: 331509339774976
+    m_Localized: CADEAU DE CONNEXION QUOTIDIEN
+    m_Metadata:
+      m_Items: []
+  - m_Id: 331667678945280
+    m_Localized: REVENDIQUER
+    m_Metadata:
+      m_Items: []
+  - m_Id: 339123637313536
+    m_Localized: JOUR 1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 339146651459584
+    m_Localized: JOUR 2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 339160308113408
+    m_Localized: JOUR 3
+    m_Metadata:
+      m_Items: []
+  - m_Id: 339161079865344
+    m_Localized: JOUR 4
+    m_Metadata:
+      m_Items: []
+  - m_Id: 339161818062848
+    m_Localized: JOUR 5
+    m_Metadata:
+      m_Items: []
+  - m_Id: 339162623369216
+    m_Localized: JOUR 6
+    m_Metadata:
+      m_Items: []
+  - m_Id: 339234127863808
+    m_Localized: JOUR 7
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

@@ -46,6 +46,131 @@ MonoBehaviour:
     m_Localized: Let Others Know What You Think
     m_Metadata:
       m_Items: []
+  - m_Id: 308783627624448
+    m_Localized: Credits
+    m_Metadata:
+      m_Items: []
+  - m_Id: 309728440737792
+    m_Localized: Build
+    m_Metadata:
+      m_Items: []
+  - m_Id: 310300745129984
+    m_Localized: PLAY
+    m_Metadata:
+      m_Items: []
+  - m_Id: 310677892751360
+    m_Localized: GIANT TREE
+    m_Metadata:
+      m_Items: []
+  - m_Id: 311153862369280
+    m_Localized: ROUTE
+    m_Metadata:
+      m_Items: []
+  - m_Id: 314108028116992
+    m_Localized: HELMETS
+    m_Metadata:
+      m_Items: []
+  - m_Id: 314687412494336
+    m_Localized: SPEND
+    m_Metadata:
+      m_Items: []
+  - m_Id: 318715215208448
+    m_Localized: TO INCREASE MAXIMUM
+    m_Metadata:
+      m_Items: []
+  - m_Id: 320997252128768
+    m_Localized: Mt. Fuji
+    m_Metadata:
+      m_Items: []
+  - m_Id: 321353394675712
+    m_Localized: COMING SOON
+    m_Metadata:
+      m_Items: []
+  - m_Id: 321970892693504
+    m_Localized: SUPPLIES
+    m_Metadata:
+      m_Items: []
+  - m_Id: 322190477090816
+    m_Localized: ALL PURCHASE SUPPORT THE TALLEST TREE ECOSYSTEM TO HELP PLAYERS
+      PLANT MORE TREES
+    m_Metadata:
+      m_Items: []
+  - m_Id: 322931660939264
+    m_Localized: RECOVER PURCHASES
+    m_Metadata:
+      m_Items: []
+  - m_Id: 323927250296832
+    m_Localized: GOLDEN HELMET
+    m_Metadata:
+      m_Items: []
+  - m_Id: 324105722126336
+    m_Localized: LIMITED EDITION EQUIPMENT
+    m_Metadata:
+      m_Items: []
+  - m_Id: 324447847309312
+    m_Localized: YOUR FOREST
+    m_Metadata:
+      m_Items: []
+  - m_Id: 326381723443200
+    m_Localized: COLLECT
+    m_Metadata:
+      m_Items: []
+  - m_Id: 328289494228992
+    m_Localized: TO PLANT TREES
+    m_Metadata:
+      m_Items: []
+  - m_Id: 328896187719680
+    m_Localized: STAGE
+    m_Metadata:
+      m_Items: []
+  - m_Id: 329216729014272
+    m_Localized: PLANTING TREES
+    m_Metadata:
+      m_Items: []
+  - m_Id: 329889898029056
+    m_Localized: LEVEL UP TO PLANT A TREE IN THE REAL WORLD
+    m_Metadata:
+      m_Items: []
+  - m_Id: 330730000343040
+    m_Localized: GOT IT
+    m_Metadata:
+      m_Items: []
+  - m_Id: 331509339774976
+    m_Localized: DAILY LOGIN GIFT
+    m_Metadata:
+      m_Items: []
+  - m_Id: 331667678945280
+    m_Localized: CLAIM
+    m_Metadata:
+      m_Items: []
+  - m_Id: 339123637313536
+    m_Localized: DAY 1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 339146651459584
+    m_Localized: DAY 2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 339160308113408
+    m_Localized: DAY 3
+    m_Metadata:
+      m_Items: []
+  - m_Id: 339161079865344
+    m_Localized: DAY 4
+    m_Metadata:
+      m_Items: []
+  - m_Id: 339161818062848
+    m_Localized: DAY 5
+    m_Metadata:
+      m_Items: []
+  - m_Id: 339162623369216
+    m_Localized: DAY 6
+    m_Metadata:
+      m_Items: []
+  - m_Id: 339234127863808
+    m_Localized: DAY 7
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
