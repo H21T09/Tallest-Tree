@@ -215,6 +215,10 @@ MonoBehaviour:
     m_Localized: RECOGER 1000 SEMILLAS
     m_Metadata:
       m_Items: []
+  - m_Id: 746086470770688
+    m_Localized: "INICIAR SESI\xD3N"
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

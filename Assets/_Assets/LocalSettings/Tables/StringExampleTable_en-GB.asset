@@ -215,6 +215,10 @@ MonoBehaviour:
     m_Localized: GATHER 1000 SEEDS
     m_Metadata:
       m_Items: []
+  - m_Id: 746086470770688
+    m_Localized: LOGIN
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

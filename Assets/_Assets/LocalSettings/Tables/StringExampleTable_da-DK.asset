@@ -215,6 +215,10 @@ MonoBehaviour:
     m_Localized: "SAML 1000 FR\xD8"
     m_Metadata:
       m_Items: []
+  - m_Id: 746086470770688
+    m_Localized: LOG IND
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

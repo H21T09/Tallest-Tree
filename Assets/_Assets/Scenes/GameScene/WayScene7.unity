@@ -8941,7 +8941,7 @@ PrefabInstance:
       objectReference: {fileID: 624023930}
     - target: {fileID: 8234950718614720426, guid: c824fec63e662d14180e965ac967fd80, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: LoadMenuScene
+      value: BackToScene
       objectReference: {fileID: 0}
     - target: {fileID: 8234950718614720426, guid: c824fec63e662d14180e965ac967fd80, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName

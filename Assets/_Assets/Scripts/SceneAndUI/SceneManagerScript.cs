@@ -31,6 +31,15 @@ public class SceneManagerScript : MonoBehaviour
         ButtonTeleportManager.SetReturningFromGame();
     }
 
+    public void BackToScene()
+    {
+        audioSource.Play();
+        SceneEffect.SetActive(true);
+        animator.SetTrigger("End");
+        Invoke("WaitToLoad", 0.5f);
+    }
+
+
     void WaitToLoad()
     {
         SceneManager.LoadScene("MenuGame1");

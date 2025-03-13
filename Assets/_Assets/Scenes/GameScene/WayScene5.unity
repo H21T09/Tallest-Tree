@@ -786,7 +786,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7327877530018017540, guid: 1df0b31d67ffac1448b0988002d55aac, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 21.509
+      value: 21.552
       objectReference: {fileID: 0}
     - target: {fileID: 7327877530018017540, guid: 1df0b31d67ffac1448b0988002d55aac, type: 3}
       propertyPath: m_LocalPosition.z
@@ -7376,7 +7376,15 @@ PrefabInstance:
     - target: {fileID: 870451888, guid: c824fec63e662d14180e965ac967fd80, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 624023926}
+      objectReference: {fileID: 624023930}
+    - target: {fileID: 870451888, guid: c824fec63e662d14180e965ac967fd80, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: BackToScene
+      objectReference: {fileID: 0}
+    - target: {fileID: 870451888, guid: c824fec63e662d14180e965ac967fd80, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: SceneManagerScript, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 944433849, guid: c824fec63e662d14180e965ac967fd80, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 

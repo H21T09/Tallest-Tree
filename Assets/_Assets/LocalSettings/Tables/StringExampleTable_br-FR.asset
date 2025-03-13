@@ -215,6 +215,10 @@ MonoBehaviour:
     m_Localized: "R\xC9CUP\xC9RER 1000 GRAINES"
     m_Metadata:
       m_Items: []
+  - m_Id: 746086470770688
+    m_Localized: CONNEXION
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

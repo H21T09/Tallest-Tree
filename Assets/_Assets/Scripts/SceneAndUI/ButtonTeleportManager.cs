@@ -102,7 +102,7 @@ public class ButtonTeleportManager : MonoBehaviour
 
     private IEnumerator DelayTeleportCoroutine()
     {
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(2f);
         TeleportToNextButton();
     }
 

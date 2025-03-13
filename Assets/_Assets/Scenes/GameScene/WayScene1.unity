@@ -2089,6 +2089,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 328802378}
+    - target: {fileID: 450313316, guid: c824fec63e662d14180e965ac967fd80, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: LoadMenuScene
+      objectReference: {fileID: 0}
     - target: {fileID: 544548129, guid: c824fec63e662d14180e965ac967fd80, type: 3}
       propertyPath: m_SizeDelta.x
       value: 705.464
@@ -2137,6 +2141,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 328802378}
+    - target: {fileID: 8234950718614720426, guid: c824fec63e662d14180e965ac967fd80, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: BackToScene
+      objectReference: {fileID: 0}
     - target: {fileID: 8234950719367543721, guid: c824fec63e662d14180e965ac967fd80, type: 3}
       propertyPath: m_Pivot.x
       value: 0

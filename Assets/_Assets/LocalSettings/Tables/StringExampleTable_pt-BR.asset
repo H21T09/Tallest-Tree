@@ -215,6 +215,10 @@ MonoBehaviour:
     m_Localized: COLETAR 1000 SEMENTES
     m_Metadata:
       m_Items: []
+  - m_Id: 746086470770688
+    m_Localized: ENTRAR
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
