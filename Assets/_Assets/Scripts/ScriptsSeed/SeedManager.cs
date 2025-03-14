@@ -24,7 +24,10 @@ public class SeedManager : MonoBehaviour
         seed += amount;
         SaveGold();
         GoogleIntegration.Instance.UpdateLeaderboard();
-
+        if (totalseed >= 1000)
+        {
+            GoogleIntegration.Instance.UnlockAchievement("CgkIxs6L2YscEAIQAw");
+        }
     }
 
     public void SpendSeed(int amount)

@@ -27,7 +27,7 @@ public class CheckGooglePlayGames : MonoBehaviour
     {
         if (!Social.localUser.authenticated)
         {
-            Social.ShowLeaderboardUI();
+            
             Social.localUser.Authenticate((bool success) =>
             {
                 if (success)

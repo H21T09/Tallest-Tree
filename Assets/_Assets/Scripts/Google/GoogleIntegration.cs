@@ -64,10 +64,28 @@ public class GoogleIntegration : MonoBehaviour
         }
     }
 
+    public void UnlockAchievement(string achievementID)
+    {
+        if (Social.localUser.authenticated)
+        {
+            Social.ReportProgress(achievementID, 100.0f, success => {
+                if (success)
+                    Debug.Log("Mở khóa thành tích thành công!");
+                else
+                    Debug.Log("Lỗi khi mở khóa thành tích!");
+            });
+        }
+    }
     public void ShowLeaderBoard()
     {
         if (!connectedToGooglePlay) LogInToGooglePlay();
         Social.ShowLeaderboardUI();
+    }
+
+    public void ShowAchievements()
+    {
+        if (!connectedToGooglePlay) LogInToGooglePlay();
+        Social.ShowAchievementsUI();
     }
 
 
