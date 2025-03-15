@@ -219,6 +219,10 @@ MonoBehaviour:
     m_Localized: "INICIAR SESI\xD3N"
     m_Metadata:
       m_Items: []
+  - m_Id: 746102509789184
+    m_Localized: COMPRAR 500 SEMILLAS
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

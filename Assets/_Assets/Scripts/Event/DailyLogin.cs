@@ -235,7 +235,7 @@ public class DailyLogin : MonoBehaviour
     {
         if(Day_1 == 1)
         {
-            
+            //ReceiveEventHat(eventHat);
             LastDate = System.DateTime.Now.Day;
             PlayerPrefs.SetInt("LastDate", LastDate);
             seed += 100;

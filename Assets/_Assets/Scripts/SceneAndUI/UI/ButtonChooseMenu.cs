@@ -8,6 +8,7 @@ public class ButtonChooseMenu : MonoBehaviour
 
     void Start()
     {
+
         InitializeButtons();
     }
 
@@ -61,10 +62,16 @@ public class ButtonChooseMenu : MonoBehaviour
         PlayerPrefs.Save(); // Lưu ngay lập tức
     }
 
-    void OnApplicationQuit()
+    
+
+    void OnApplicationFocus(bool hasFocus)
     {
-        // Đánh dấu game đã bị đóng hoàn toàn để reset button lần sau
-        PlayerPrefs.SetInt("GameRestarted", 1);
-        PlayerPrefs.Save();
+        if (hasFocus)
+        {
+            PlayerPrefs.SetInt("GameRestarted", 1);
+            PlayerPrefs.Save();
+        }
+       
     }
+
 }

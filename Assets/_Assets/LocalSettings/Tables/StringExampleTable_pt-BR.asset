@@ -219,6 +219,10 @@ MonoBehaviour:
     m_Localized: ENTRAR
     m_Metadata:
       m_Items: []
+  - m_Id: 746102509789184
+    m_Localized: COMPRAR 500 SEMENTES
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

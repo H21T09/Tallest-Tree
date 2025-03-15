@@ -9039,7 +9039,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1116969522
 RectTransform:
   m_ObjectHideFlags: 0
@@ -16737,6 +16737,10 @@ PrefabInstance:
       propertyPath: allHats.Array.data[9]
       value: 
       objectReference: {fileID: 11400000, guid: 8844b4a8875e05c47886dac4d64b6eb3, type: 2}
+    - target: {fileID: 6131177802011912106, guid: a2a3f8664d02ed743848063cc15c29ab, type: 3}
+      propertyPath: allHats.Array.data[10]
+      value: 
+      objectReference: {fileID: 11400000, guid: 17d4bcec03f20074383aed67d0331c98, type: 2}
     - target: {fileID: 6131177802011912107, guid: a2a3f8664d02ed743848063cc15c29ab, type: 3}
       propertyPath: hatParent
       value: 

@@ -32,19 +32,23 @@ public class CharracterJump : MonoBehaviour
 
     private void Update()
     {
+        Press();
+    }
 
+    void Press()
+    {
         if (Input.GetKeyDown(KeyCode.Escape) || (Input.GetKeyDown(KeyCode.Mouse0) && !IsPointerOverUIElement()))
         {
             TurnAround();
             Jump();
             audioSource.Play();
         }
-        if (!isGrounded)
+        if (!isGrounded && !FindObjectOfType<PlayerDash>().Dasing)
         {
             transform.rotation = Quaternion.Euler(0, 0, defaultRotationZ);
         }
-
     }
+
 
     private bool IsPointerOverUIElement()
     {

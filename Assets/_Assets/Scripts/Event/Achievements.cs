@@ -84,8 +84,8 @@ public class Achievements : MonoBehaviour
     {
         IsClaimed_2 = PlayerPrefs.GetInt("IsClaimed_2", 0);
         HatCount_1 = PlayerPrefs.GetInt("OwnedHatCount", 0);
-        slider_2.value = HatCount_1;
-        Text_2.text = HatCount_1 + "/5";
+        slider_2.value = HatCount_1 - 1;
+        Text_2.text = HatCount_1 - 1 + "/5";
 
         if (IsClaimed_2 == 1)
         {

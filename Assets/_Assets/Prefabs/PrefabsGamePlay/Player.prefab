@@ -677,8 +677,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 56efd5c8f9fd2cc48b2467cdbf4303ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dashForce: 30
+  dashForce: 10
   IsDash: 0
+  Dasing: 0
 --- !u!114 &2953116511158708572
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -716,6 +717,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 3ace559323047ee4f8803a7e0a5aed9e, type: 2}
   - {fileID: 11400000, guid: 05780fc020f467247af3f27a9f9b70d3, type: 2}
   - {fileID: 11400000, guid: 1a23facd44f35b94e82458766b47c546, type: 2}
+  - {fileID: 11400000, guid: 8844b4a8875e05c47886dac4d64b6eb3, type: 2}
 --- !u!82 &5349568403512504390
 AudioSource:
   m_ObjectHideFlags: 0

@@ -219,6 +219,10 @@ MonoBehaviour:
     m_Localized: LOG IND
     m_Metadata:
       m_Items: []
+  - m_Id: 746102509789184
+    m_Localized: "K\xD8B 500 FR\xD8"
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

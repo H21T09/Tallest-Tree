@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d263c4751fcbbec488fa51895157ccc8, type: 3}
   m_Name: GOLD
   m_EditorClassIdentifier: 
-  id: 101
+  id: 10
   hatPrefab: {fileID: 5606136345982535076, guid: 75a8f478b3a95b54d8565b7fe10aacad, type: 3}
   price: 0
   hatOffset: {x: 0, y: 0, z: 0}

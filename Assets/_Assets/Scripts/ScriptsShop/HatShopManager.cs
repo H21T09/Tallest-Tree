@@ -25,7 +25,10 @@ public class HatShopManager : MonoBehaviour
 
     private void Awake()
     {
-
+        if (Instance == null)
+            Instance = this;
+        else
+            Destroy(gameObject);
         audioSource.playOnAwake = false;
         audioSource.clip = buyEffect;
 

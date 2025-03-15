@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 using UnityEngine.UI;
 
 public class HatButton : MonoBehaviour
@@ -55,22 +56,39 @@ public class HatButton : MonoBehaviour
 
     void LoadUIState()
     {
-        string uiState = PlayerPrefs.GetString($"HatUIState_{hatData.id}", "Default");
+        
+            string uiState = PlayerPrefs.GetString($"HatUIState_{hatData.id}", "Default");
 
-        if (uiState == "Equipped")
-        {
-            SetOn("Equip");
-            SetOn("ItemOpen");
-            SetOff("ImageForComplete");
-            SetOff("ImageForPrice");
-        }
-        else if (uiState == "Purchased")
-        {
-            SetOn("ItemOpen");
-            SetOn("Equip");
-            SetOff("Item");
-            SetOff("ImageForPrice");
-        }
+            if (uiState == "Equipped")
+            {
+                SetOn("Equip");
+                SetOn("ItemOpen");
+                SetOff("ImageForComplete");
+                SetOff("ImageForPrice");
+            }
+            else if (uiState == "Purchased")
+            {
+                SetOn("ItemOpen");
+                SetOn("Equip");
+                SetOff("Item");
+                SetOff("ImageForPrice");
+            }
+            else if (hatData.hatType == HatType.EventReward) // Kiểm tra mũ sự kiện
+            {
+                string savedEventHats = PlayerPrefs.GetString("EventHatsReceived", "");
+                List<string> eventHatList = new List<string>(savedEventHats.Split(','));
+
+                if (eventHatList.Contains(hatData.id.ToString()))
+                {
+                    SetOn("ItemOpen");
+                    SetOn("Equip");
+                    SetOff("Item");
+                    SetOff("ImageForPrice");
+                    SaveUIState("Purchased"); // Lưu trạng thái để không cần kiểm tra lại
+                }
+            }
+        
+
 
 
 
